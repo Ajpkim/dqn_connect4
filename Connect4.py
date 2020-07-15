@@ -1,3 +1,5 @@
+import numpy as np
+
 class Connect4:
     def __init__(self, rows=6, cols=7):
         self.rows = rows
@@ -43,7 +45,7 @@ class Connect4:
             return False
 
         if self.turns == self.rows * self.cols:  # tie
-            self.status = -1
+            self.status = 'tie'
             return False
 
         # adjust for empty col... OR raise error here if called on empty col???
@@ -111,3 +113,6 @@ class Connect4:
         for row in self.board:
             s += str(row) + '\n'
         return s
+
+if __name__ == '__main__':
+    pass

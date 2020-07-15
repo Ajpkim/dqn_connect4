@@ -1,5 +1,5 @@
 class Agent:
-    def __init__(self, id=1, name=''):
+    def __init__(self, id=1, name='nameme'):
         self.id = id
         self.name = name
 
@@ -7,7 +7,7 @@ class Agent:
         "Return the estimated best move"
         raise NotImplementedError()
 
-    def get(self, state, action):
+    def get_val(self, state, action):
         "Return estimated value of taking given action in state"
         raise NotImplementedError()
 
@@ -17,3 +17,6 @@ class Agent:
 
     def __repr__(self):
         return f'Agent name: {self.name}'
+
+if __name__ == '__main__':
+    pass
