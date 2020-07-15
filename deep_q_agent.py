@@ -1,4 +1,21 @@
+import random
+
+import torch
+import torch.nn as nn
+import torch.nn.functional as F
+
+
+from agent import Agent
+from deep_q_net import DeepQNet
+from mdp import Connect4MDP
+from replay_buffer import ReplayBuffer
+
+
 class DeepQAgent(Agent):
+    """
+    Agent with deep nn for valuing game states and interacting with mdp envirment. 
+    Methods for analyzing and interacting with mdp state.
+    """
     def __init__(self, id, name, action_space, lr, gamma, batch_size, mem_size, eps, eps_min, eps_decay, *args, **kwargs):
         # super().__init__()  # don't really need to call super bc there is nothing in Agent class
         self.id = id
@@ -27,13 +44,19 @@ class DeepQAgent(Agent):
     
 # https://pytorch.org/tutorials/intermediate/reinforcement_q_learning.html
 
-    def select_action(self, state):
-        "Episilon greedy action selection given state"
+    def select_action(self, mdp):
+        "Episilon greedy action selection given mdp"
+     
         if random.random() < self.eps:
-            return random.choice(self.action_space)
+            action = random.choice(mdp.valid_moves())
         else:
-            return self.best(state)
-
+            state = mdp.get_state()
+            invalid_moves = mdp.invalid_moves()
+            action_estimates = self.action_estimates(state)
+            action_estimates[invalid_moves] = -float('inf')
+            action = torch.argmax(action_estimates).item()
+            
+        return action 
 
     def action_estimates(self, state):
         "Return value estimates for each possible action given state"
@@ -42,6 +65,18 @@ class DeepQAgent(Agent):
             action_estimates = self.net(state)
         return action_estimates
     
+    def get_next_move(self, board):
+        "Return best valid move"
+        # for Luer API
+        invalid_moves = []
+        for col in range(len(board[0])):
+            if board[0, col] != 0:
+                invalid_moves.append(col)
+    
+        state = self.encode_board(board)
+        action_estimates = self.action_estimates(state)
+        action_estimates[invalid_moves] = -float('inf')
+        return torch.argmax(action_estimates).item()
 
     def self_play(self, mdp, episodes):
         "Simulate games against self and store experiences in replay buffer"
@@ -49,6 +84,8 @@ class DeepQAgent(Agent):
         for state, action, reward, next_state, done in experiences:
             self.replay_buffer.push(state, action, reward, next_state, done)
     
+    def encode_board(self, board):
+        return board.flatten()
 
     def learn(self):
         "Update net with batch of experiences randomly drawn from replay buffer"
@@ -77,45 +114,16 @@ class DeepQAgent(Agent):
         self.eps = self.eps * self.eps_decay if self.eps > self.eps_min else self.eps_min
         self.learn_iter += 1
 
-
     def train(self, iters, n_episodes):
         for i in range(iters):
             self.self_play(self.mdp, n_episodes)
             self.learn()
 
-
-    def best(self, state):
-        "Return greedy action given state"
-        state = state.flatten()
-        state = torch.tensor(state).to(self.device).float()
-        with torch.no_grad():
-            action_vals = self.net(state)  # estimate of future reward for each possible action
-        return torch.argmax(action_vals).item()
-
-
-    def get_next_move(self, board):
-        "Return best estimated valid move"
-
-        # for Luer API
-        invalid_moves = []
-        for col in range(len(board[0])):
-            if board[0, col] != 0:
-                invalid_moves.append(col)
-    
-        ### CLEAN UP ENCODE/DECODE BOARD STATE STUFF
-        state = board.flatten()
-        action_estimates = self.action_estimates(state)
-        action_estimates[invalid_moves] = -float('inf')
-        return torch.argmax(action_estimates).item()
-
-    
     def save_model(self, path):
         torch.save(self.net.state_dict(), path)
     
-
     def load_model(self, path):
         self.net.load_state_dict(torch.load(path))
-    
 
     def save_checkpoint(self, path, iteration, loss):
         torch.save({'iterations': iteration,
@@ -123,7 +131,6 @@ class DeepQAgent(Agent):
                    'optimizer_state_dict': self.optimizer.state_dict(),
                    'loss': loss}, 
                    path)
-    
 
     def load_checkpoint(self, path):
         checkpoint = torch.load(path)
@@ -132,6 +139,8 @@ class DeepQAgent(Agent):
         optimizer_state_dict = checkpoint['optimizer_state_dict']
         loss = checkpoint['loss']
 
-
     def __repr__(self):
         return f'Deep Q Agent: {self.name}'    
+
+if __name__ == '__main__':
+    pass
