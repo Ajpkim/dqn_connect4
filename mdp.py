@@ -1,6 +1,6 @@
 import numpy as np
 
-from Connect4 import Connect4
+from connect4 import Connect4
 
 
 class Connect4MDP(Connect4):

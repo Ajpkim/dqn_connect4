@@ -1,30 +1,62 @@
 import numpy as np
+import pdb
 
+from datetime import datetime
 
-from DeepQAgent import DeepQAgent
-from self_play_episodes import self_play_episodes
-from train import train
-from util_players import RandomPlayer, HumanPlayer
 from agent import Agent
-from Connect4 import Connect4
+from connect4 import Connect4
+from deep_q_agent import DeepQAgent
+from evaluator import Evaluator
 from mdp import Connect4MDP
 from replay_buffer import ReplayBuffer
+from self_play_episodes import self_play_episodes
+from trainer import Trainer
+from util_players import RandomPlayer, HumanPlayer
 
 
+### MDP
+mdp = Connect4MDP()
 
+###### Agent
 id = 1
 name = 'test agent'
-action_space = [0, 1, 2, 3, 4, 5, 6]
+mem_size = 10000
+agent = DeepQAgent(id, name, mem_size)
+
+#### Trainer
 lr = .001
 gamma = .9
 batch_size = 64
-mem_size = 10000
-eps = 1
-eps_min = .01
-eps_decay = .9999
-agent = DeepQAgent(id, name, action_space, lr, gamma,
-                   batch_size, mem_size, eps, eps_min, eps_decay)
+eps = .1
+iters = 100
+n_episodes = 5
+trainer = Trainer(mdp, agent, lr=.005,gamma=.9,iters=10000,n_episodes=5,batch_size=64,eps=.1)
 
-mdp = Connect4MDP()
-# experiences = self_play_episodes(mdp, agent, 1)
-# train(agent, iters=1, n_episodes=5)
+######################################################
+
+start = datetime.now()
+start_time = start.strftime("%H:%M:%S")
+print("Start time =", start_time); print()
+
+
+trainer.self_play(50)
+trainer.train()
+
+##### Evaluator
+evaluator = Evaluator()
+
+################################################
+rando = RandomPlayer()
+
+res = evaluator.evaluate(agent, rando, 5000)
+print(res)
+
+
+#######
+print()
+end = datetime.now()
+end_time = end.strftime("%H:%M:%S")
+print("end time =", end_time)
+running_time = end - start
+print("running time =", running_time)
+#######

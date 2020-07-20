@@ -1,10 +1,10 @@
 import numpy as np
 
 from mdp import Connect4MDP
-from DeepQAgent import DeepQAgent
+from deep_q_agent import DeepQAgent
 
 
-def self_play_episodes(mdp: Connect4MDP, agent: DeepQAgent, episodes: int) -> list:
+def self_play_episodes(mdp: Connect4MDP, agent: DeepQAgent, episodes: int, eps: float) -> list:
     """
     Generate training date through self play. 
     Return list of experience tuples: (state, action, reward, next_state)
@@ -21,14 +21,14 @@ def self_play_episodes(mdp: Connect4MDP, agent: DeepQAgent, episodes: int) -> li
             
         while mdp.status == 0:
             id = p1_id
-            action = agent.select_action(mdp)
+            action = agent.select_action(mdp, eps)
             states_actions_rewards.append((state, action, 0))  # 0 reward for all states except last
             state = mdp.make_move(action, id=id)
 
             if mdp.status != 0: break
             
             id = p2_id                     
-            action = agent.select_action(mdp)
+            action = agent.select_action(mdp, eps)
             states_actions_rewards.append((state, action, 0))  # 0 reward for all states except last
             state = mdp.make_move(action, id=id)
 

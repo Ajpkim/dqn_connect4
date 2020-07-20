@@ -3,20 +3,18 @@ class Agent:
         self.id = id
         self.name = name
 
-    def best(self, state):
+    def greedy(self, state):
         "Return the estimated best move"
         raise NotImplementedError()
 
     def get_val(self, state, action):
-        "Return estimated value of taking given action in state"
+        "Return estimated Q value of taking given action in state"
         raise NotImplementedError()
 
     def get_next_move(self, state):
-        "Return next game move"
+        "Return next game move. Must be legal action."
         raise NotImplementedError()
 
     def __repr__(self):
         return f'Agent name: {self.name}'
 
-if __name__ == '__main__':
-    pass

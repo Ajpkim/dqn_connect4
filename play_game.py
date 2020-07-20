@@ -1,3 +1,5 @@
+from Connect4 import Connect4
+
 def play_game(p1, p2, shuffle_order=True, verbose=False):
     "Return 1 for p1 win, 2 for p2 win, 0 for tie"
     p1_id = 1
@@ -18,15 +20,6 @@ def play_game(p1, p2, shuffle_order=True, verbose=False):
             if verbose:
                 print(game)
                 print("player 1's turn")
-
-###########################
-            # temp change for testing QAgent
-
-#             move = p1.select_action(game.board)
-#             # valid_moves = mdp.valid_moves()
-#             if move not in game.valid_moves():
-#                 move = random.choice(game.valid_moves())
-# ###########################
 
             move = p1.get_next_move(game.board)
 

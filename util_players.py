@@ -1,3 +1,5 @@
+import random
+
 class RandomPlayer:
     def __init__(self):
         self.name = 'random player'
@@ -9,11 +11,9 @@ class RandomPlayer:
                 valid_cols.append(i)
         return valid_cols
 
-
     def get_next_move(self, board):
         valid_moves = self.valid_moves(board)
-        return random.choice(valid_moves)
-    
+        return random.choice(valid_moves)    
     
     def __len__(self):
         return 1
