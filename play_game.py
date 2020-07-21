@@ -1,4 +1,5 @@
-from Connect4 import Connect4
+import random
+from connect4 import Connect4
 
 def play_game(p1, p2, shuffle_order=True, verbose=False):
     "Return 1 for p1 win, 2 for p2 win, 0 for tie"

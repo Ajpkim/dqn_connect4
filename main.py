@@ -1,13 +1,14 @@
 import argparse
 import logging
 import os
-import numpy as np
 import pdb
 import sys
-import yaml
-
 from pathlib import Path
 from datetime import datetime
+
+import numpy as np
+import torch
+import yaml
 
 from agent import Agent
 from connect4 import Connect4
@@ -18,18 +19,26 @@ from mdp import Connect4MDP
 from replay_buffer import ReplayBuffer
 from self_play_episodes import self_play_episodes
 from trainer import Trainer
+from util_players import RandomPlayer, HumanPlayer
 
-### Decide if i want file paths in config file or as command line args
+### SOMETHING WRONG... PERFORMANCE ALWAYS .498% VS BEST, TRIED DIFFERENT ARCHITECTURES.
+### inspect learning steps, saving/loading models, and training loop in main
+### Best model is being set to random fresh network and still winning every epoch...
+## the winning percentages are consistently 0, 1, .498 ... wierd...
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--config_file", default='config/default.yaml', help='Configuration file location.')
-parser.add_argument("--load_file", default='', help='file to load model from.')
-parser.add_argument("--save_file", default='models/new_model_in_training', help='file to save model to.')
+parser.add_argument("--load_file", default='', help='file load model for training from.')
+parser.add_argument("--save_file", default='models/new_model_in_training', help='file to training model to.')
 parser.add_argument("--log_file", default='logs/new_model_logs.log', help='log file location. Corresponds with model being trained.')
 ARGS = parser.parse_args()
 
 with open(ARGS.config_file, mode='r') as f:
     config = yaml.safe_load(f)
+
+random_seed = config['random_seed']
+torch.manual_seed(random_seed)
+np.random.seed(random_seed)
 
 # HOW CAN I DO THIS W/O CALLING BASICCONFIG()?
 logging.basicConfig(filename=ARGS.log_file, 
@@ -38,40 +47,63 @@ logging.basicConfig(filename=ARGS.log_file,
                     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 
 logger = logging.getLogger(__name__)
-
 logger.info('\n\n----------   NEW LOG   ----------\n')
 logger.info(f'config_file: {ARGS.config_file}')
 logger.info(f'load_file: {ARGS.load_file}')
 logger.info(f'save_file: {ARGS.save_file}')
 logger.info(f'training params: {config}')
 
+model_dir, model_name = os.path.split(ARGS.save_file)
+memory_file = model_dir + '/memory'
+agent = DeepQAgent(name=model_name)
 
-agent = DeepQAgent()
 if ARGS.load_file:
     agent.load_model(ARGS.load_file)
-    head, tail = os.path.split(ARGS.save_file)
-    agent.name = tail
-else: agent.name='New model'
+    logger.info('loaded model')
+    agent.load_memory(memory_file)
+    logger.info('loaded memory')
 
-################################################
 trainer = Trainer(agent=agent, 
                     lr=config['lr'],
                     gamma=config['gamma'],
-                    iters=config['iters'],
-                    n_episodes=config['n_episodes'], 
                     batch_size=config['batch_size'], 
                     eps=config['eps'])
-
 evaluator = Evaluator()
 
+################################################
+### TRAINING
 for epoch in range(config['epochs']):
     logger.info(f'Starting epoch {epoch}')
+    trainer.train(iters=config['iters'], n_episodes=config['n_episodes'])
+    
+    ## EVALUATION PHASE
+    if config['eval_best']:
+        logger.info('Entering evalutation phase')
+        best_agent = DeepQAgent(name='best')
+        best_agent.load_model(config['best_model'])
+        results, percentages = evaluator.evaluate(agent_1=agent, agent_2=best_agent, n_episodes=config['eval_episodes'])
+        logger.info(f"Performance vs best_model over {config['eval_episodes']} games: {percentages}")
+        
+        if percentages[agent.name] > percentages[best_agent.name]:
+            logger.info('WON VS BEST_MODEL. Overwriting best_model')
+            agent.save_model(config['best_model'])
+        else:
+            logger.info('LOSS VS BEST_MODEL')
+    
+    if config['eval_random']:
+        random_agent = RandomPlayer()
+        results, percentages = evaluator.evaluate(agent_1=agent, agent_2=random_agent, n_episodes=config['eval_episodes'])
+        win_p, loss_p, tie_p = [results[k] / config['eval_episodes'] for k in results]
+        logger.info(f"Performance vs random agent over {config['eval_episodes']} games: {percentages}")
+    
+    agent.save_model(ARGS.save_file)
+    logger.info(f'saved model state_dict at {ARGS.save_file}')
+    agent.save_memory(memory_file)
+    logger.info(f'saved memory at {memory_file}')
 
-    trainer.train()
+logger.info('DONE')
+################################################
 
-    ## EVALUATE
-    ## DECIDE WHAT SHOULD BE TRACKED AND EVALUATED
-    ## Should save all models throughout training
 
 
 

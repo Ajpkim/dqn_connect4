@@ -1,5 +1,5 @@
 import numpy as np
-
+import pdb
 import torch
 import torch.nn as nn
 
@@ -13,30 +13,28 @@ class Trainer:
     """
     ... 
     """
-    def __init__(self, agent, lr, gamma, iters, n_episodes, batch_size, eps):
+    def __init__(self, agent, lr, gamma, batch_size, eps):
         self.mdp = Connect4MDP()
         self.agent = agent
         self.optimizer = torch.optim.Adam(params=agent.net.parameters(), lr=lr)
         self.loss_fn = nn.MSELoss()
         self.lr = lr
         self.gamma = gamma
-        self.iters = iters
-        self.n_episodes = n_episodes
         self.batch_size = batch_size
         self.eps = eps
     
-    def self_play(self, episodes):
+    def self_play(self, n_episodes):
         """
         Generate training data by playing games vs self.
         Gathers experiece tuples over n_episodes and pushes them to agent replay buffer.
         """
-        experiences = self_play_episodes(self.mdp, self.agent, episodes, self.eps)
+        experiences = self_play_episodes(self.mdp, self.agent, n_episodes, self.eps)
         for state, action, reward, next_state, done in experiences:
             self.agent.replay_buffer.push(state, action, reward, next_state, done)
 
     def learn(self):
         """
-        Update agent network with random batch from agent replay buffer.
+        Update model with random batch from agent replay buffer.
         """
         batch = self.agent.replay_buffer.sample(self.batch_size)
         states = torch.tensor([x.state for x in batch]).float().to(self.agent.device)
@@ -46,23 +44,21 @@ class Trainer:
         dones = [x.done for x in batch]
 
         self.optimizer.zero_grad()
-        q_vals = self.agent.net(states)[range(len(actions)), actions]
+        q_vals = self.agent.net(states)[range(len(actions)), actions]  # Q vals for paths taken
         q_next_vals = self.agent.net(next_states)
-        q_next_vals[dones] = 0
+        q_next_vals[dones] = 0  # terminal states have no future expected value
         q_targets = rewards + self.gamma * torch.max(q_next_vals, dim=1)[0]
-
         loss = self.loss_fn(q_targets, q_vals).to(self.agent.device)
         loss.backward()
         self.optimizer.step()
         self.agent.learning_iters += 1  # book keeping
 
-    def train(self):  ## ADD IN ITERS ARG?
+    def train(self, iters, n_episodes):
         """
-        Train agent over given number of iterations.
-        Each iteration consists of self play over self.n_episodes 
-        and then a learn step where agent updates network based on 
-        random sample from replay buffer
+        Train agent over given number of iterations. Each iteration consists 
+        of self play over n_episodes and then a learn step where agent 
+        updates network based on random sample from replay buffer
         """
-        for i in range(self.iters):
-            self.self_play(self.n_episodes)
+        for i in range(iters):
+            self.self_play(n_episodes)
             self.learn()

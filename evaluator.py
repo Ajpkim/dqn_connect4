@@ -7,23 +7,24 @@ class Evaluator:
 	def __init__(self):
 		pass
 
-	def evaluate(self, best_agent, new_agent, n_episodes):
-		"Method for comparing best agent vs new agent"
-		
-		results = {'best': 0, 'new': 0, 'tie': 0}
+	def evaluate(self, agent_1, agent_2, n_episodes):
+		"Method for comparing 2 agents. Returns dict of totals and dict of percentages."
+		percentages = {}
+		results = {agent_1.name: 0, agent_2.name: 0, 'tie': 0}
 		for n in range(n_episodes):
-			outcome = self.play_game(best_agent, new_agent)
+			outcome = self.play_game(agent_1, agent_2)
 			if outcome == 1:
-				results['best'] += 1
+				results[agent_1.name] += 1
 			elif outcome == -1:
-				results['new'] += 1
-			else: results['tie'] += 1
+				results[agent_2.name] += 1
+			elif outcome == 'tie': 
+				results['tie'] += 1
 		
-		# if results['new'] > results['best']:
-		# 	return True
-		# else: return False
+		percentages[agent_1.name] = round(results[agent_1.name] / n_episodes, 4)
+		percentages[agent_2.name] = round(results[agent_2.name] / n_episodes, 4)
+		percentages['tie'] = round(results['tie'] / n_episodes, 4)
 		
-		return results
+		return results, percentages
 
 	def play_game(self, agent_1, agent_2):
 		"Return 1 for p1 win, 2 for p2 win, 0 for tie"
