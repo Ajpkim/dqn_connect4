@@ -2,17 +2,26 @@
 # model_file: models/in_training
 # log_file: models/in_training_LOGS.log
 
-files:
-  best_file: 
-  model_file:
-  log_file: 'logs/test.log'
+epochs: 10
+iters: 1
+n_episodes: 5
+batch_size: 64
+lr: .001
+gamma: .9
+eps: .2
 
-training:
-  epochs: 10
-  iters: 1
-  n_episodes: 5
-  batch_size: 64
-  lr: .001
-  gamma: .9
-  eps: .2
+
+# files:
+#   best_file: 
+#   model_file:
+#   log_file: 'logs/test.log'
+
+# training:
+#   epochs: 10
+#   iters: 1
+#   n_episodes: 5
+#   batch_size: 64
+#   lr: .001
+#   gamma: .9
+#   eps: .2
 

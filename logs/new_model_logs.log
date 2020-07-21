@@ -1,0 +1,36 @@
+2020-07-20 21:50:31,406 - __main__ - INFO - 
+
+----------   NEW LOG   ----------
+
+2020-07-20 21:50:31,406 - __main__ - INFO - config_file: config/default.yaml
+2020-07-20 21:50:31,406 - __main__ - INFO - load_file: 
+2020-07-20 21:50:31,407 - __main__ - INFO - save_file: models/new_model_in_training
+2020-07-20 21:50:31,407 - __main__ - INFO - training params: {'epochs': 10, 'iters': 1, 'n_episodes': 5, 'batch_size': 64, 'lr': 0.001, 'gamma': 0.9, 'eps': 0.2}
+2020-07-20 21:50:31,408 - __main__ - INFO - Starting epoch 0
+2020-07-20 21:50:31,455 - __main__ - INFO - Starting epoch 1
+2020-07-20 21:50:31,553 - __main__ - INFO - Starting epoch 2
+2020-07-20 21:50:31,621 - __main__ - INFO - Starting epoch 3
+2020-07-20 21:50:31,675 - __main__ - INFO - Starting epoch 4
+2020-07-20 21:50:31,758 - __main__ - INFO - Starting epoch 5
+2020-07-20 21:50:31,840 - __main__ - INFO - Starting epoch 6
+2020-07-20 21:50:31,927 - __main__ - INFO - Starting epoch 7
+2020-07-20 21:50:32,006 - __main__ - INFO - Starting epoch 8
+2020-07-20 21:50:32,096 - __main__ - INFO - Starting epoch 9
+2020-07-20 21:51:02,683 - __main__ - INFO - 
+
+----------   NEW LOG   ----------
+
+2020-07-20 21:51:02,683 - __main__ - INFO - config_file: config/default.yaml
+2020-07-20 21:51:02,683 - __main__ - INFO - load_file: 
+2020-07-20 21:51:02,683 - __main__ - INFO - save_file: models/new_model_in_training
+2020-07-20 21:51:02,683 - __main__ - INFO - training params: {'epochs': 10, 'iters': 1, 'n_episodes': 5, 'batch_size': 64, 'lr': 0.001, 'gamma': 0.9, 'eps': 0.2}
+2020-07-20 21:51:02,683 - __main__ - INFO - Starting epoch 0
+2020-07-20 21:51:02,730 - __main__ - INFO - Starting epoch 1
+2020-07-20 21:51:02,814 - __main__ - INFO - Starting epoch 2
+2020-07-20 21:51:02,877 - __main__ - INFO - Starting epoch 3
+2020-07-20 21:51:02,930 - __main__ - INFO - Starting epoch 4
+2020-07-20 21:51:03,016 - __main__ - INFO - Starting epoch 5
+2020-07-20 21:51:03,086 - __main__ - INFO - Starting epoch 6
+2020-07-20 21:51:03,167 - __main__ - INFO - Starting epoch 7
+2020-07-20 21:51:03,217 - __main__ - INFO - Starting epoch 8
+2020-07-20 21:51:03,257 - __main__ - INFO - Starting epoch 9
