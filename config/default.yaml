@@ -1,27 +1,14 @@
-# best_file: models/best
-# model_file: models/in_training
-# log_file: models/in_training_LOGS.log
 
-epochs: 10
-iters: 1
+random_seed: 3
+eval_best: True
+eval_random: True
+eval_episodes: 1000
+best_model: models/best
+epochs: 5
+iters: 10000
 n_episodes: 5
 batch_size: 64
-lr: .001
+eps: .5
+lr: .05
 gamma: .9
-eps: .2
-
-
-# files:
-#   best_file: 
-#   model_file:
-#   log_file: 'logs/test.log'
-
-# training:
-#   epochs: 10
-#   iters: 1
-#   n_episodes: 5
-#   batch_size: 64
-#   lr: .001
-#   gamma: .9
-#   eps: .2
 

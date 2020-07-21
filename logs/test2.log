@@ -1,0 +1,265 @@
+2020-07-21 10:58:30,663 - __main__ - INFO - 
+
+----------   NEW LOG   ----------
+
+2020-07-21 10:58:30,663 - __main__ - INFO - config_file: config/default.yaml
+2020-07-21 10:58:30,663 - __main__ - INFO - load_file: 
+2020-07-21 10:58:30,663 - __main__ - INFO - save_file: models/agent0/v0
+2020-07-21 10:58:30,663 - __main__ - INFO - training params: {'random_seed': 3, 'epochs': 10, 'iters': 50, 'n_episodes': 5, 'batch_size': 64, 'lr': 0.01, 'gamma': 0.9, 'eps': 0.2}
+2020-07-21 10:58:30,678 - __main__ - INFO - Starting epoch 0
+2020-07-21 10:58:34,473 - __main__ - INFO - Starting epoch 1
+2020-07-21 10:58:37,981 - __main__ - INFO - Starting epoch 2
+2020-07-21 10:58:41,190 - __main__ - INFO - Starting epoch 3
+2020-07-21 10:58:44,583 - __main__ - INFO - Starting epoch 4
+2020-07-21 10:58:47,717 - __main__ - INFO - Starting epoch 5
+2020-07-21 10:58:50,908 - __main__ - INFO - Starting epoch 6
+2020-07-21 10:58:54,319 - __main__ - INFO - Starting epoch 7
+2020-07-21 10:58:57,935 - __main__ - INFO - Starting epoch 8
+2020-07-21 10:59:00,776 - __main__ - INFO - Starting epoch 9
+2020-07-21 11:00:25,389 - __main__ - INFO - 
+
+----------   NEW LOG   ----------
+
+2020-07-21 11:00:25,389 - __main__ - INFO - config_file: config/default.yaml
+2020-07-21 11:00:25,389 - __main__ - INFO - load_file: 
+2020-07-21 11:00:25,389 - __main__ - INFO - save_file: models/agent0/v0
+2020-07-21 11:00:25,389 - __main__ - INFO - training params: {'random_seed': 3, 'epochs': 10, 'iters': 5, 'n_episodes': 5, 'batch_size': 64, 'lr': 0.01, 'gamma': 0.9, 'eps': 0.2}
+2020-07-21 11:00:25,404 - __main__ - INFO - Starting epoch 0
+2020-07-21 11:00:25,652 - __main__ - INFO - Starting epoch 1
+2020-07-21 11:00:26,051 - __main__ - INFO - Starting epoch 2
+2020-07-21 11:00:26,358 - __main__ - INFO - Starting epoch 3
+2020-07-21 11:00:26,671 - __main__ - INFO - Starting epoch 4
+2020-07-21 11:00:27,002 - __main__ - INFO - Starting epoch 5
+2020-07-21 11:00:27,301 - __main__ - INFO - Starting epoch 6
+2020-07-21 11:00:27,614 - __main__ - INFO - Starting epoch 7
+2020-07-21 11:00:27,995 - __main__ - INFO - Starting epoch 8
+2020-07-21 11:00:28,296 - __main__ - INFO - Starting epoch 9
+2020-07-21 11:00:28,583 - __main__ - INFO - saved model state_dict at models/agent0/v0
+2020-07-21 11:02:54,541 - __main__ - INFO - 
+
+----------   NEW LOG   ----------
+
+2020-07-21 11:02:54,541 - __main__ - INFO - config_file: config/default.yaml
+2020-07-21 11:02:54,541 - __main__ - INFO - load_file: 
+2020-07-21 11:02:54,541 - __main__ - INFO - save_file: models/agent0/v0
+2020-07-21 11:02:54,541 - __main__ - INFO - training params: {'random_seed': 3, 'epochs': 10, 'iters': 5, 'n_episodes': 5, 'batch_size': 64, 'lr': 0.01, 'gamma': 0.9, 'eps': 0.2}
+2020-07-21 11:02:54,556 - __main__ - INFO - Starting epoch 0
+2020-07-21 11:02:54,857 - __main__ - INFO - Starting epoch 1
+2020-07-21 11:02:55,142 - __main__ - INFO - Starting epoch 2
+2020-07-21 11:02:55,406 - __main__ - INFO - Starting epoch 3
+2020-07-21 11:02:55,669 - __main__ - INFO - Starting epoch 4
+2020-07-21 11:02:55,990 - __main__ - INFO - Starting epoch 5
+2020-07-21 11:02:56,351 - __main__ - INFO - Starting epoch 6
+2020-07-21 11:02:56,672 - __main__ - INFO - Starting epoch 7
+2020-07-21 11:02:56,993 - __main__ - INFO - Starting epoch 8
+2020-07-21 11:02:57,345 - __main__ - INFO - Starting epoch 9
+2020-07-21 11:02:57,636 - __main__ - INFO - saved model state_dict at models/agent0/v0
+2020-07-21 11:03:26,170 - __main__ - INFO - 
+
+----------   NEW LOG   ----------
+
+2020-07-21 11:03:26,170 - __main__ - INFO - config_file: config/default.yaml
+2020-07-21 11:03:26,170 - __main__ - INFO - load_file: 
+2020-07-21 11:03:26,170 - __main__ - INFO - save_file: models/agent0/v0
+2020-07-21 11:03:26,170 - __main__ - INFO - training params: {'random_seed': 3, 'epochs': 10, 'iters': 5, 'n_episodes': 5, 'batch_size': 64, 'lr': 0.01, 'gamma': 0.9, 'eps': 0.2}
+2020-07-21 11:03:26,185 - __main__ - INFO - Starting epoch 0
+2020-07-21 11:03:26,439 - __main__ - INFO - Starting epoch 1
+2020-07-21 11:03:26,693 - __main__ - INFO - Starting epoch 2
+2020-07-21 11:03:27,040 - __main__ - INFO - Starting epoch 3
+2020-07-21 11:03:27,337 - __main__ - INFO - Starting epoch 4
+2020-07-21 11:03:27,686 - __main__ - INFO - Starting epoch 5
+2020-07-21 11:03:28,039 - __main__ - INFO - Starting epoch 6
+2020-07-21 11:03:28,414 - __main__ - INFO - Starting epoch 7
+2020-07-21 11:03:28,754 - __main__ - INFO - Starting epoch 8
+2020-07-21 11:03:29,032 - __main__ - INFO - Starting epoch 9
+2020-07-21 11:03:29,341 - __main__ - INFO - saved model state_dict at models/agent0/v0
+2020-07-21 11:03:29,402 - __main__ - INFO - saved memory at models/agent0/memory
+2020-07-21 11:56:21,186 - __main__ - INFO - 
+
+----------   NEW LOG   ----------
+
+2020-07-21 11:56:21,186 - __main__ - INFO - config_file: config/default.yaml
+2020-07-21 11:56:21,186 - __main__ - INFO - load_file: models/agent0/v0
+2020-07-21 11:56:21,186 - __main__ - INFO - save_file: models/agent0/v2
+2020-07-21 11:56:21,186 - __main__ - INFO - training params: {'random_seed': 3, 'best_model': 'models/best', 'epochs': 10, 'iters': 5, 'n_episodes': 5, 'batch_size': 64, 'lr': 0.01, 'gamma': 0.9, 'eps': 0.2}
+2020-07-21 11:56:21,186 - __main__ - INFO - loaded model
+2020-07-21 11:56:21,208 - __main__ - INFO - loaded memory
+2020-07-21 11:56:21,208 - __main__ - INFO - Starting epoch 0
+2020-07-21 12:00:05,520 - __main__ - INFO - 
+
+----------   NEW LOG   ----------
+
+2020-07-21 12:00:05,520 - __main__ - INFO - config_file: config/default.yaml
+2020-07-21 12:00:05,520 - __main__ - INFO - load_file: models/agent0/v0
+2020-07-21 12:00:05,520 - __main__ - INFO - save_file: models/agent0/v2
+2020-07-21 12:00:05,520 - __main__ - INFO - training params: {'random_seed': 3, 'best_model': 'models/best', 'epochs': 10, 'iters': 500, 'n_episodes': 5, 'batch_size': 64, 'lr': 0.01, 'gamma': 0.9, 'eps': 0.2}
+2020-07-21 12:00:05,520 - __main__ - INFO - loaded model
+2020-07-21 12:00:05,536 - __main__ - INFO - loaded memory
+2020-07-21 12:00:05,536 - __main__ - INFO - Starting epoch 0
+2020-07-21 12:02:17,273 - __main__ - INFO - 
+
+----------   NEW LOG   ----------
+
+2020-07-21 12:02:17,273 - __main__ - INFO - config_file: config/default.yaml
+2020-07-21 12:02:17,273 - __main__ - INFO - load_file: models/agent0/v0
+2020-07-21 12:02:17,273 - __main__ - INFO - save_file: models/agent0/v2
+2020-07-21 12:02:17,273 - __main__ - INFO - training params: {'random_seed': 3, 'best_model': 'models/best', 'epochs': 10, 'iters': 500, 'n_episodes': 5, 'batch_size': 64, 'lr': 0.01, 'gamma': 0.9, 'eps': 0.2}
+2020-07-21 12:02:17,273 - __main__ - INFO - loaded model
+2020-07-21 12:02:17,289 - __main__ - INFO - loaded memory
+2020-07-21 12:02:17,289 - __main__ - INFO - Starting epoch 0
+2020-07-21 12:02:26,700 - __main__ - INFO - 
+
+----------   NEW LOG   ----------
+
+2020-07-21 12:02:26,700 - __main__ - INFO - config_file: config/default.yaml
+2020-07-21 12:02:26,700 - __main__ - INFO - load_file: models/agent0/v0
+2020-07-21 12:02:26,700 - __main__ - INFO - save_file: models/agent0/v2
+2020-07-21 12:02:26,700 - __main__ - INFO - training params: {'random_seed': 3, 'best_model': 'models/best', 'epochs': 10, 'iters': 500, 'n_episodes': 5, 'batch_size': 64, 'lr': 0.01, 'gamma': 0.9, 'eps': 0.2}
+2020-07-21 12:02:26,700 - __main__ - INFO - loaded model
+2020-07-21 12:02:26,723 - __main__ - INFO - loaded memory
+2020-07-21 12:02:26,723 - __main__ - INFO - Starting epoch 0
+2020-07-21 12:03:19,641 - __main__ - INFO - 
+
+----------   NEW LOG   ----------
+
+2020-07-21 12:03:19,641 - __main__ - INFO - config_file: config/default.yaml
+2020-07-21 12:03:19,641 - __main__ - INFO - load_file: models/agent0/v0
+2020-07-21 12:03:19,641 - __main__ - INFO - save_file: models/agent0/v2
+2020-07-21 12:03:19,641 - __main__ - INFO - training params: {'random_seed': 3, 'best_model': 'models/best', 'epochs': 10, 'iters': 500, 'n_episodes': 5, 'batch_size': 64, 'lr': 0.01, 'gamma': 0.9, 'eps': 0.2}
+2020-07-21 12:03:19,641 - __main__ - INFO - loaded model
+2020-07-21 12:03:19,679 - __main__ - INFO - loaded memory
+2020-07-21 12:03:19,679 - __main__ - INFO - Starting epoch 0
+2020-07-21 12:03:43,127 - __main__ - INFO - 
+
+----------   NEW LOG   ----------
+
+2020-07-21 12:03:43,127 - __main__ - INFO - config_file: config/default.yaml
+2020-07-21 12:03:43,127 - __main__ - INFO - load_file: models/agent0/v0
+2020-07-21 12:03:43,127 - __main__ - INFO - save_file: models/agent0/v2
+2020-07-21 12:03:43,127 - __main__ - INFO - training params: {'random_seed': 3, 'best_model': 'models/best', 'epochs': 10, 'iters': 500, 'n_episodes': 5, 'batch_size': 64, 'lr': 0.01, 'gamma': 0.9, 'eps': 0.2}
+2020-07-21 12:03:43,127 - __main__ - INFO - loaded model
+2020-07-21 12:03:43,158 - __main__ - INFO - loaded memory
+2020-07-21 12:03:43,158 - __main__ - INFO - Starting epoch 0
+2020-07-21 12:04:27,288 - __main__ - INFO - 
+
+----------   NEW LOG   ----------
+
+2020-07-21 12:04:27,288 - __main__ - INFO - config_file: config/default.yaml
+2020-07-21 12:04:27,288 - __main__ - INFO - load_file: models/agent0/v0
+2020-07-21 12:04:27,288 - __main__ - INFO - save_file: models/agent0/v2
+2020-07-21 12:04:27,288 - __main__ - INFO - training params: {'random_seed': 3, 'best_model': 'models/best', 'epochs': 10, 'iters': 500, 'n_episodes': 5, 'batch_size': 64, 'lr': 0.01, 'gamma': 0.9, 'eps': 0.2}
+2020-07-21 12:04:27,288 - __main__ - INFO - loaded model
+2020-07-21 12:04:27,320 - __main__ - INFO - loaded memory
+2020-07-21 12:04:27,320 - __main__ - INFO - Starting epoch 0
+2020-07-21 12:06:35,569 - __main__ - INFO - 
+
+----------   NEW LOG   ----------
+
+2020-07-21 12:06:35,569 - __main__ - INFO - config_file: config/default.yaml
+2020-07-21 12:06:35,569 - __main__ - INFO - load_file: models/agent0/v0
+2020-07-21 12:06:35,569 - __main__ - INFO - save_file: models/agent0/v2
+2020-07-21 12:06:35,569 - __main__ - INFO - training params: {'random_seed': 3, 'best_model': 'models/best', 'epochs': 10, 'iters': 500, 'n_episodes': 5, 'batch_size': 64, 'lr': 0.01, 'gamma': 0.9, 'eps': 0.2}
+2020-07-21 12:06:35,569 - __main__ - INFO - loaded model
+2020-07-21 12:06:35,600 - __main__ - INFO - loaded memory
+2020-07-21 12:06:35,600 - __main__ - INFO - Starting epoch 0
+2020-07-21 12:20:17,476 - __main__ - INFO - 
+
+----------   NEW LOG   ----------
+
+2020-07-21 12:20:17,491 - __main__ - INFO - config_file: config/default.yaml
+2020-07-21 12:20:17,491 - __main__ - INFO - load_file: models/agent0/v0
+2020-07-21 12:20:17,491 - __main__ - INFO - save_file: models/agent0/v2
+2020-07-21 12:20:17,491 - __main__ - INFO - training params: {'random_seed': 3, 'best_model': 'models/best', 'epochs': 10, 'iters': 500, 'n_episodes': 5, 'batch_size': 64, 'lr': 0.01, 'gamma': 0.9, 'eps': 0.2}
+2020-07-21 12:20:17,491 - __main__ - INFO - loaded model
+2020-07-21 12:20:17,507 - __main__ - INFO - loaded memory
+2020-07-21 12:20:17,507 - __main__ - INFO - Starting epoch 0
+2020-07-21 12:21:15,317 - __main__ - INFO - 
+
+----------   NEW LOG   ----------
+
+2020-07-21 12:21:15,317 - __main__ - INFO - config_file: config/default.yaml
+2020-07-21 12:21:15,317 - __main__ - INFO - load_file: models/agent0/v0
+2020-07-21 12:21:15,317 - __main__ - INFO - save_file: models/agent0/v2
+2020-07-21 12:21:15,317 - __main__ - INFO - training params: {'random_seed': 3, 'best_model': 'models/best', 'epochs': 10, 'iters': 500, 'n_episodes': 5, 'batch_size': 64, 'lr': 0.01, 'gamma': 0.9, 'eps': 0.2}
+2020-07-21 12:21:15,317 - __main__ - INFO - loaded model
+2020-07-21 12:21:15,371 - __main__ - INFO - loaded memory
+2020-07-21 12:21:15,371 - __main__ - INFO - Starting epoch 0
+2020-07-21 12:21:54,842 - __main__ - INFO - 
+
+----------   NEW LOG   ----------
+
+2020-07-21 12:21:54,842 - __main__ - INFO - config_file: config/default.yaml
+2020-07-21 12:21:54,842 - __main__ - INFO - load_file: models/agent0/v0
+2020-07-21 12:21:54,842 - __main__ - INFO - save_file: models/agent0/v2
+2020-07-21 12:21:54,842 - __main__ - INFO - training params: {'random_seed': 3, 'best_model': 'models/best', 'epochs': 10, 'iters': 500, 'n_episodes': 5, 'batch_size': 64, 'lr': 0.01, 'gamma': 0.9, 'eps': 0.2}
+2020-07-21 12:21:54,842 - __main__ - INFO - loaded model
+2020-07-21 12:21:54,880 - __main__ - INFO - loaded memory
+2020-07-21 12:21:54,880 - __main__ - INFO - Starting epoch 0
+2020-07-21 12:22:26,624 - __main__ - INFO - Entering evalutation phase
+2020-07-21 12:23:30,355 - __main__ - INFO - 
+
+----------   NEW LOG   ----------
+
+2020-07-21 12:23:30,355 - __main__ - INFO - config_file: config/default.yaml
+2020-07-21 12:23:30,355 - __main__ - INFO - load_file: models/agent0/v0
+2020-07-21 12:23:30,355 - __main__ - INFO - save_file: models/agent0/v2
+2020-07-21 12:23:30,355 - __main__ - INFO - training params: {'random_seed': 3, 'best_model': 'models/best', 'epochs': 10, 'iters': 10, 'n_episodes': 5, 'batch_size': 64, 'lr': 0.01, 'gamma': 0.9, 'eps': 0.2}
+2020-07-21 12:23:30,355 - __main__ - INFO - loaded model
+2020-07-21 12:23:30,377 - __main__ - INFO - loaded memory
+2020-07-21 12:23:30,377 - __main__ - INFO - Starting epoch 0
+2020-07-21 12:23:30,956 - __main__ - INFO - Entering evalutation phase
+2020-07-21 12:23:34,680 - __main__ - INFO - Evaluation results: {'best': 498, 'training': 502, 'tie': 0}
+2020-07-21 12:23:34,680 - __main__ - INFO - Training model outperformed best model. Overwriting best_model
+2020-07-21 12:23:34,680 - __main__ - INFO - Starting epoch 1
+2020-07-21 12:23:35,222 - __main__ - INFO - Entering evalutation phase
+2020-07-21 12:23:37,803 - __main__ - INFO - Evaluation results: {'best': 498, 'training': 502, 'tie': 0}
+2020-07-21 12:23:37,804 - __main__ - INFO - Training model outperformed best model. Overwriting best_model
+2020-07-21 12:23:37,805 - __main__ - INFO - Starting epoch 2
+2020-07-21 12:23:38,363 - __main__ - INFO - Entering evalutation phase
+2020-07-21 12:23:40,431 - __main__ - INFO - Evaluation results: {'best': 1000, 'training': 0, 'tie': 0}
+2020-07-21 12:23:40,431 - __main__ - INFO - Best model outperformed training model
+2020-07-21 12:23:40,431 - __main__ - INFO - Starting epoch 3
+2020-07-21 12:23:40,969 - __main__ - INFO - Entering evalutation phase
+2020-07-21 12:23:43,271 - __main__ - INFO - Evaluation results: {'best': 498, 'training': 502, 'tie': 0}
+2020-07-21 12:23:43,271 - __main__ - INFO - Training model outperformed best model. Overwriting best_model
+2020-07-21 12:23:43,273 - __main__ - INFO - Starting epoch 4
+2020-07-21 12:23:43,837 - __main__ - INFO - Entering evalutation phase
+2020-07-21 12:23:45,924 - __main__ - INFO - Evaluation results: {'best': 1000, 'training': 0, 'tie': 0}
+2020-07-21 12:23:45,924 - __main__ - INFO - Best model outperformed training model
+2020-07-21 12:23:45,924 - __main__ - INFO - Starting epoch 5
+2020-07-21 12:23:46,441 - __main__ - INFO - Entering evalutation phase
+2020-07-21 12:23:48,515 - __main__ - INFO - Evaluation results: {'best': 498, 'training': 502, 'tie': 0}
+2020-07-21 12:23:48,515 - __main__ - INFO - Training model outperformed best model. Overwriting best_model
+2020-07-21 12:23:48,515 - __main__ - INFO - Starting epoch 6
+2020-07-21 12:23:49,043 - __main__ - INFO - Entering evalutation phase
+2020-07-21 12:23:50,914 - __main__ - INFO - Evaluation results: {'best': 498, 'training': 502, 'tie': 0}
+2020-07-21 12:23:50,914 - __main__ - INFO - Training model outperformed best model. Overwriting best_model
+2020-07-21 12:23:50,914 - __main__ - INFO - Starting epoch 7
+2020-07-21 12:23:51,462 - __main__ - INFO - Entering evalutation phase
+2020-07-21 12:23:53,366 - __main__ - INFO - Evaluation results: {'best': 498, 'training': 502, 'tie': 0}
+2020-07-21 12:23:53,366 - __main__ - INFO - Training model outperformed best model. Overwriting best_model
+2020-07-21 12:23:53,366 - __main__ - INFO - Starting epoch 8
+2020-07-21 12:23:54,096 - __main__ - INFO - Entering evalutation phase
+2020-07-21 12:23:55,973 - __main__ - INFO - Evaluation results: {'best': 498, 'training': 502, 'tie': 0}
+2020-07-21 12:23:55,973 - __main__ - INFO - Training model outperformed best model. Overwriting best_model
+2020-07-21 12:23:55,973 - __main__ - INFO - Starting epoch 9
+2020-07-21 12:23:56,612 - __main__ - INFO - Entering evalutation phase
+2020-07-21 12:23:58,797 - __main__ - INFO - Evaluation results: {'best': 498, 'training': 502, 'tie': 0}
+2020-07-21 12:23:58,797 - __main__ - INFO - Training model outperformed best model. Overwriting best_model
+2020-07-21 12:23:58,799 - __main__ - INFO - saved model state_dict at models/agent0/v2
+2020-07-21 12:23:58,844 - __main__ - INFO - saved memory at models/agent0/memory
+2020-07-21 12:32:47,626 - __main__ - INFO - 
+
+----------   NEW LOG   ----------
+
+2020-07-21 12:32:47,626 - __main__ - INFO - config_file: config/default.yaml
+2020-07-21 12:32:47,626 - __main__ - INFO - load_file: models/agent0/v2
+2020-07-21 12:32:47,626 - __main__ - INFO - save_file: models/agent0/v3
+2020-07-21 12:32:47,626 - __main__ - INFO - training params: {'random_seed': 3, 'best_model': 'models/best', 'epochs': 10, 'iters': 1000, 'n_episodes': 5, 'batch_size': 64, 'lr': 0.01, 'gamma': 0.9, 'eps': 0.25}
+2020-07-21 12:32:47,626 - __main__ - INFO - loaded model
+2020-07-21 12:32:47,680 - __main__ - INFO - loaded memory
+2020-07-21 12:32:47,680 - __main__ - INFO - Starting epoch 0
+2020-07-21 12:33:48,963 - __main__ - INFO - Entering evalutation phase
+2020-07-21 12:33:54,179 - __main__ - INFO - Evaluation results: {'best': 498, 'training': 502, 'tie': 0}
+2020-07-21 12:33:54,179 - __main__ - INFO - WON VS BEST_MODEL. Overwriting best_model
+2020-07-21 12:33:54,181 - __main__ - INFO - Starting epoch 1
