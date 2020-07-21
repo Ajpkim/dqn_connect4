@@ -30,7 +30,7 @@ batch_size = 64
 eps = .1
 iters = 100
 n_episodes = 5
-trainer = Trainer(mdp, agent, lr=.005,gamma=.9,iters=10000,n_episodes=5,batch_size=64,eps=.1)
+trainer = Trainer(agent, lr=.005,gamma=.9, iters=10000,n_episodes=5,batch_size=64,eps=.1)
 
 ######################################################
 

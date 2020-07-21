@@ -1,9 +1,9 @@
 import random
+import pickle
 
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-
 
 from agent import Agent
 from deep_q_net import DeepQNet
@@ -16,13 +16,14 @@ class DeepQAgent(Agent):
     Agent with deep nn for valuing game states and interacting with mdp envirment. 
     Methods for analyzing and interacting with mdp state.
     """
-    def __init__(self, id, name, mem_size):
+    def __init__(self, name='DQAgent', mem_size=10000):
         # super().__init__()  # don't really need to call super bc there is nothing in Agent class
-        self.id = id
         self.name = name
         self.replay_buffer = ReplayBuffer(capacity=mem_size)
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         self.net = DeepQNet().to(self.device)
+        self.learning_iters = 0
+        ### ADD POLICY & TARGET NETS
 
     def select_action(self, mdp, eps):
         "Episilon greedy action selection given mdp"
@@ -55,8 +56,13 @@ class DeepQAgent(Agent):
             action_estimates = self.net(state)
         return action_estimates
     
+
     def encode_board(self, board):
         return board.flatten()
+
+    # def save_agent(self, path):
+    #     with()
+
 
     def save_model(self, path):
         torch.save(self.net.state_dict(), path)

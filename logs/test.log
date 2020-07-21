@@ -1,0 +1,73 @@
+2020-07-20 21:19:07,200 - __main__ - INFO - 
+--------------------------------
+---------    NEW LOG   --------
+--------------------------------
+
+2020-07-20 21:19:07,200 - __main__ - INFO - config_file: config/default.yaml
+2020-07-20 21:19:07,200 - __main__ - INFO - files: {'best_file': None, 'model_file': None, 'log_file': 'logs/test.log'}
+2020-07-20 21:19:07,200 - __main__ - INFO - training params: {'epochs': 1, 'iters': 1000, 'n_episodes': 5, 'batch_size': 64, 'lr': 0.001, 'gamma': 0.9, 'eps': 0.2}
+2020-07-20 21:20:46,842 - __main__ - INFO - 
+--------------------------------
+---------    NEW LOG   --------
+--------------------------------
+
+2020-07-20 21:20:46,842 - __main__ - INFO - config_file: config/default.yaml
+2020-07-20 21:20:46,842 - __main__ - INFO - files: {'best_file': None, 'model_file': None, 'log_file': 'logs/test.log'}
+2020-07-20 21:20:46,842 - __main__ - INFO - training params: {'epochs': 1, 'iters': 1000, 'n_episodes': 5, 'batch_size': 64, 'lr': 0.001, 'gamma': 0.9, 'eps': 0.2}
+2020-07-20 21:20:46,842 - __main__ - INFO - Starting epoch 0
+2020-07-20 21:24:52,062 - __main__ - INFO - 
+--------------------------------
+---------    NEW LOG   --------
+--------------------------------
+
+2020-07-20 21:24:52,062 - __main__ - INFO - config_file: config/default.yaml
+2020-07-20 21:24:52,062 - __main__ - INFO - files: {'best_file': None, 'model_file': None, 'log_file': 'logs/test.log'}
+2020-07-20 21:24:52,062 - __main__ - INFO - training params: {'epochs': 1, 'iters': 1000, 'n_episodes': 5, 'batch_size': 64, 'lr': 0.001, 'gamma': 0.9, 'eps': 0.2}
+2020-07-20 21:24:52,062 - __main__ - INFO - NEW MODEL
+2020-07-20 21:24:52,062 - __main__ - INFO - Starting epoch 0
+2020-07-20 21:25:21,132 - __main__ - INFO - 
+--------------------------------
+---------    NEW LOG   --------
+--------------------------------
+
+2020-07-20 21:25:21,132 - __main__ - INFO - config_file: config/default.yaml
+2020-07-20 21:25:21,132 - __main__ - INFO - files: {'best_file': None, 'model_file': None, 'log_file': 'logs/test.log'}
+2020-07-20 21:25:21,132 - __main__ - INFO - training params: {'epochs': 1, 'iters': 1000, 'n_episodes': 5, 'batch_size': 64, 'lr': 0.001, 'gamma': 0.9, 'eps': 0.2}
+2020-07-20 21:25:21,132 - __main__ - INFO - NEW MODEL
+2020-07-20 21:25:21,132 - __main__ - INFO - Starting epoch 0
+2020-07-20 21:26:38,444 - __main__ - INFO - 
+--------------------------------
+---------    NEW LOG   --------
+--------------------------------
+
+2020-07-20 21:26:38,444 - __main__ - INFO - config_file: config/default.yaml
+2020-07-20 21:26:38,444 - __main__ - INFO - files: {'best_file': None, 'model_file': None, 'log_file': 'logs/test.log'}
+2020-07-20 21:26:38,444 - __main__ - INFO - training params: {'epochs': 10, 'iters': 1, 'n_episodes': 5, 'batch_size': 64, 'lr': 0.001, 'gamma': 0.9, 'eps': 0.2}
+2020-07-20 21:26:38,444 - __main__ - INFO - Starting epoch 0
+2020-07-20 21:26:38,491 - __main__ - INFO - Starting epoch 1
+2020-07-20 21:26:38,544 - __main__ - INFO - Starting epoch 2
+2020-07-20 21:26:38,613 - __main__ - INFO - Starting epoch 3
+2020-07-20 21:26:38,660 - __main__ - INFO - Starting epoch 4
+2020-07-20 21:26:38,744 - __main__ - INFO - Starting epoch 5
+2020-07-20 21:26:38,798 - __main__ - INFO - Starting epoch 6
+2020-07-20 21:26:38,847 - __main__ - INFO - Starting epoch 7
+2020-07-20 21:26:38,929 - __main__ - INFO - Starting epoch 8
+2020-07-20 21:26:39,020 - __main__ - INFO - Starting epoch 9
+2020-07-20 21:27:32,223 - __main__ - INFO - 
+--------------------------------
+---------    NEW LOG   --------
+--------------------------------
+
+2020-07-20 21:27:32,223 - __main__ - INFO - config_file: config/default.yaml
+2020-07-20 21:27:32,223 - __main__ - INFO - files: {'best_file': None, 'model_file': None, 'log_file': 'logs/test.log'}
+2020-07-20 21:27:32,223 - __main__ - INFO - training params: {'epochs': 10, 'iters': 1, 'n_episodes': 5, 'batch_size': 64, 'lr': 0.001, 'gamma': 0.9, 'eps': 0.2}
+2020-07-20 21:27:32,223 - __main__ - INFO - Starting epoch 0
+2020-07-20 21:27:32,283 - __main__ - INFO - Starting epoch 1
+2020-07-20 21:27:32,356 - __main__ - INFO - Starting epoch 2
+2020-07-20 21:27:32,419 - __main__ - INFO - Starting epoch 3
+2020-07-20 21:27:32,513 - __main__ - INFO - Starting epoch 4
+2020-07-20 21:27:32,577 - __main__ - INFO - Starting epoch 5
+2020-07-20 21:27:32,659 - __main__ - INFO - Starting epoch 6
+2020-07-20 21:27:32,729 - __main__ - INFO - Starting epoch 7
+2020-07-20 21:27:32,782 - __main__ - INFO - Starting epoch 8
+2020-07-20 21:27:32,846 - __main__ - INFO - Starting epoch 9

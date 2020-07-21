@@ -1,0 +1,13 @@
+# best_file: models/best
+# model_file: models/in_training
+best_file: 
+model_file:
+  
+epochs: 10
+iters: 1000
+n_episodes: 5
+batch_size: 64
+lr: .001
+gamma: .9
+eps: .2
+
