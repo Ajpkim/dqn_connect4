@@ -27,7 +27,7 @@ class Evaluator:
 		return results, percentages
 
 	def play_game(self, agent_1, agent_2):
-		"Return 1 for p1 win, 2 for p2 win, 0 for tie"
+		"Return 1 for p1 win, -1 for p2 win, 0 for tie"
 		
 		agent_1_id = 1
 		agent_2_id = -1
