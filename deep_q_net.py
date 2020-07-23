@@ -2,6 +2,9 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
+# ONE HOT THE STATE???  -> 1x84 input dim
+
+## arch0
 class DeepQNet(nn.Module):
     def __init__(self):
     # def __init__(self, input_dim, num_hidden_units, hidden_layers, output_dim):
@@ -21,6 +24,7 @@ class DeepQNet(nn.Module):
         x = self.fc5(x)
         return x 
 
+## arch1
 class DeepQNet2(nn.Module):
     def __init__(self):
         super(DeepQNet2, self).__init__()

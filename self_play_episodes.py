@@ -54,8 +54,7 @@ def self_play_episodes(mdp: Connect4MDP, agent: DeepQAgent, episodes: int, eps: 
     
     return all_experiences
 
-
-        ## Passing reward only to terminal experiences
+        ### Passing reward only to terminal experiences
         # if len(states_actions_rewards) % 2 != 0:  # add reward to correct sequence
         #     states_actions_rewards[-1] = states_actions_rewards[-1][0:2] + (p1_reward,)
         #     states_actions_rewards[-2] = states_actions_rewards[-2][0:2] + (p2_reward,)

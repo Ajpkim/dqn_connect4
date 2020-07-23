@@ -1,3 +1,4 @@
+import copy
 import random
 import pickle
 
@@ -13,17 +14,21 @@ from replay_buffer import ReplayBuffer
 
 class DeepQAgent(Agent):
     """
-    Agent with deep nn for valuing game states and interacting with mdp envirment. 
-    Methods for analyzing and interacting with mdp state.
+    Agent with policy and target networks for approximating and learning Q values of 
+    (state, action) pairs. Methods for analyzing and interacting with mdp state.
+    
+    Args:
+        - mem_size: capacity of agent's replay buffer for storing recent experience tuples
+        - target_freq: number of learning steps between updates to target esimtation network
     """
-    def __init__(self, name='DQAgent', mem_size=10000):
-        # super().__init__()  # don't really need to call super bc there is nothing in Agent class
+    def __init__(self, name='DQAgent', mem_size=10000, target_freq=10000):
         self.name = name
         self.replay_buffer = ReplayBuffer(capacity=mem_size)
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-        self.net = DeepQNet().to(self.device)
+        self.policy_net = DeepQNet().to(self.device)
+        self.target_net = copy.deepcopy(self.policy_net)
+        self.update_target_freq = target_freq 
         self.learning_iters = 0
-        ### ADD POLICY & TARGET NETS
 
     def select_action(self, mdp, eps):
         "Episilon greedy action selection for training given mdp"
@@ -53,27 +58,34 @@ class DeepQAgent(Agent):
         "Return Q value estimates for all actions given state"
         state = torch.from_numpy(state).to(self.device).float()
         with torch.no_grad():
-            action_estimates = self.net(state)
+            action_estimates = self.policy_net(state)
         return action_estimates
+    
+    def update_target_net(self):
+        self.target_net = copy.deepcopy(self.policy_net) 
     
     def encode_board(self, board):
         return board.flatten()
 
-    def save_memory(self, path):
+    def save_memory_learning_iters(self, path):
         with open(path, 'wb') as f:
-            pickle.dump(self.replay_buffer.memory, f)
+            data = {'learning_iters': self.learning_iters, 'memory': self.replay_buffer.memory}
+            pickle.dump(data, f)
     
-    def load_memory(self, path):
+    def load_memory_learning_iters(self, path):
         with open(path, 'rb') as f:
-            memory = pickle.load(f)
+            data = pickle.load(f)
+            learning_iters, memory = data['learning_iters'], data['memory']
+            self.learning_iters = learning_iters
             for state, action, reward, next_state, done in memory:
                 self.replay_buffer.push(state, action, reward, next_state, done)
-
+        
     def save_model(self, path):
-        torch.save(self.net.state_dict(), path)
+        torch.save(self.policy_net.state_dict(), path)
 
     def load_model(self, path):
-        self.net.load_state_dict(torch.load(path))
+        self.policy_net.load_state_dict(torch.load(path))
+        self.target_net.load_state_dict(torch.load(path))
 
     def __repr__(self):
         return f'Deep Q Agent: {self.name}'    

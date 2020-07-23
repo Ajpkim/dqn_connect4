@@ -1,0 +1,75 @@
+2020-07-23 14:46:30,031 - __main__ - INFO - 
+
+----------   NEW LOG   ----------
+
+2020-07-23 14:46:30,031 - __main__ - INFO - config_file: config/default.yaml
+2020-07-23 14:46:30,031 - __main__ - INFO - load_file: 
+2020-07-23 14:46:30,031 - __main__ - INFO - save_file: models/agent3/v0
+2020-07-23 14:46:30,031 - __main__ - INFO - config params: {'random_seed': 3, 'eval_best': True, 'eval_random': True, 'eval_episodes': 1000, 'best_model': 'models/best_models/arch0', 'epochs': 10, 'iters': 10000, 'n_episodes': 5, 'Trainer': {'batch_size': 64, 'lr': 0.005, 'gamma': 0.95, 'eps_max': 1.0, 'eps_min': 0.1, 'eps_freq': 10000, 'eps_decrement': 0.01}}
+2020-07-23 14:46:30,209 - __main__ - INFO - Building memory before learning
+2020-07-23 14:46:30,394 - __main__ - INFO - Building memory before learning
+2020-07-23 14:46:30,595 - __main__ - INFO - Building memory before learning
+2020-07-23 14:46:30,856 - __main__ - INFO - Building memory before learning
+2020-07-23 14:46:31,083 - __main__ - INFO - Building memory before learning
+2020-07-23 14:46:31,083 - __main__ - INFO - EPOCH 0
+2020-07-23 14:50:43,320 - __main__ - INFO - Performance vs best_model over 1000 games: {'v0': 0.498, 'best': 0.502, 'tie': 0.0}
+2020-07-23 14:50:43,320 - __main__ - INFO - LOSS VS BEST_MODEL
+2020-07-23 14:50:45,195 - __main__ - INFO - Performance vs random agent over 1000 games: {'v0': 0.843, 'random player': 0.157, 'tie': 0.0}
+2020-07-23 14:50:45,195 - __main__ - INFO - saved model state_dict at models/agent3/v0
+2020-07-23 14:50:45,243 - __main__ - INFO - saved memory and learning iters count at models/agent3/memory
+2020-07-23 14:50:45,243 - __main__ - INFO - EPOCH 1
+2020-07-23 14:54:38,996 - __main__ - INFO - Performance vs best_model over 1000 games: {'v0': 0.498, 'best': 0.502, 'tie': 0.0}
+2020-07-23 14:54:38,996 - __main__ - INFO - LOSS VS BEST_MODEL
+2020-07-23 14:54:40,899 - __main__ - INFO - Performance vs random agent over 1000 games: {'v0': 0.893, 'random player': 0.107, 'tie': 0.0}
+2020-07-23 14:54:40,907 - __main__ - INFO - saved model state_dict at models/agent3/v0
+2020-07-23 14:54:40,950 - __main__ - INFO - saved memory and learning iters count at models/agent3/memory
+2020-07-23 14:54:40,950 - __main__ - INFO - EPOCH 2
+2020-07-23 14:59:53,122 - __main__ - INFO - Performance vs best_model over 1000 games: {'v0': 0.498, 'best': 0.502, 'tie': 0.0}
+2020-07-23 14:59:53,122 - __main__ - INFO - LOSS VS BEST_MODEL
+2020-07-23 14:59:57,799 - __main__ - INFO - Performance vs random agent over 1000 games: {'v0': 0.895, 'random player': 0.105, 'tie': 0.0}
+2020-07-23 14:59:57,799 - __main__ - INFO - saved model state_dict at models/agent3/v0
+2020-07-23 14:59:57,915 - __main__ - INFO - saved memory and learning iters count at models/agent3/memory
+2020-07-23 14:59:57,915 - __main__ - INFO - EPOCH 3
+2020-07-23 15:08:58,751 - __main__ - INFO - Performance vs best_model over 1000 games: {'v0': 0.498, 'best': 0.502, 'tie': 0.0}
+2020-07-23 15:08:58,751 - __main__ - INFO - LOSS VS BEST_MODEL
+2020-07-23 15:09:03,577 - __main__ - INFO - Performance vs random agent over 1000 games: {'v0': 0.89, 'random player': 0.11, 'tie': 0.0}
+2020-07-23 15:09:03,577 - __main__ - INFO - saved model state_dict at models/agent3/v0
+2020-07-23 15:09:03,667 - __main__ - INFO - saved memory and learning iters count at models/agent3/memory
+2020-07-23 15:09:03,667 - __main__ - INFO - EPOCH 4
+2020-07-23 15:17:37,642 - __main__ - INFO - Performance vs best_model over 1000 games: {'v0': 0.498, 'best': 0.502, 'tie': 0.0}
+2020-07-23 15:17:37,642 - __main__ - INFO - LOSS VS BEST_MODEL
+2020-07-23 15:17:42,308 - __main__ - INFO - Performance vs random agent over 1000 games: {'v0': 0.895, 'random player': 0.105, 'tie': 0.0}
+2020-07-23 15:17:42,308 - __main__ - INFO - saved model state_dict at models/agent3/v0
+2020-07-23 15:17:42,447 - __main__ - INFO - saved memory and learning iters count at models/agent3/memory
+2020-07-23 15:17:42,447 - __main__ - INFO - EPOCH 5
+2020-07-23 15:27:01,648 - __main__ - INFO - Performance vs best_model over 1000 games: {'v0': 0.498, 'best': 0.502, 'tie': 0.0}
+2020-07-23 15:27:01,648 - __main__ - INFO - LOSS VS BEST_MODEL
+2020-07-23 15:27:06,282 - __main__ - INFO - Performance vs random agent over 1000 games: {'v0': 0.89, 'random player': 0.11, 'tie': 0.0}
+2020-07-23 15:27:06,289 - __main__ - INFO - saved model state_dict at models/agent3/v0
+2020-07-23 15:27:06,385 - __main__ - INFO - saved memory and learning iters count at models/agent3/memory
+2020-07-23 15:27:06,385 - __main__ - INFO - EPOCH 6
+2020-07-23 15:36:01,913 - __main__ - INFO - Performance vs best_model over 1000 games: {'v0': 0.498, 'best': 0.502, 'tie': 0.0}
+2020-07-23 15:36:01,913 - __main__ - INFO - LOSS VS BEST_MODEL
+2020-07-23 15:36:08,014 - __main__ - INFO - Performance vs random agent over 1000 games: {'v0': 0.89, 'random player': 0.11, 'tie': 0.0}
+2020-07-23 15:36:08,024 - __main__ - INFO - saved model state_dict at models/agent3/v0
+2020-07-23 15:36:08,129 - __main__ - INFO - saved memory and learning iters count at models/agent3/memory
+2020-07-23 15:36:08,130 - __main__ - INFO - EPOCH 7
+2020-07-23 15:44:04,828 - __main__ - INFO - Performance vs best_model over 1000 games: {'v0': 0.498, 'best': 0.502, 'tie': 0.0}
+2020-07-23 15:44:04,828 - __main__ - INFO - LOSS VS BEST_MODEL
+2020-07-23 15:44:10,226 - __main__ - INFO - Performance vs random agent over 1000 games: {'v0': 0.893, 'random player': 0.107, 'tie': 0.0}
+2020-07-23 15:44:10,232 - __main__ - INFO - saved model state_dict at models/agent3/v0
+2020-07-23 15:44:10,344 - __main__ - INFO - saved memory and learning iters count at models/agent3/memory
+2020-07-23 15:44:10,344 - __main__ - INFO - EPOCH 8
+2020-07-23 15:52:16,916 - __main__ - INFO - Performance vs best_model over 1000 games: {'v0': 0.498, 'best': 0.502, 'tie': 0.0}
+2020-07-23 15:52:16,916 - __main__ - INFO - LOSS VS BEST_MODEL
+2020-07-23 15:52:22,606 - __main__ - INFO - Performance vs random agent over 1000 games: {'v0': 0.898, 'random player': 0.102, 'tie': 0.0}
+2020-07-23 15:52:22,608 - __main__ - INFO - saved model state_dict at models/agent3/v0
+2020-07-23 15:52:22,708 - __main__ - INFO - saved memory and learning iters count at models/agent3/memory
+2020-07-23 15:52:22,708 - __main__ - INFO - EPOCH 9
+2020-07-23 16:00:36,077 - __main__ - INFO - Performance vs best_model over 1000 games: {'v0': 0.498, 'best': 0.502, 'tie': 0.0}
+2020-07-23 16:00:36,080 - __main__ - INFO - LOSS VS BEST_MODEL
+2020-07-23 16:00:41,122 - __main__ - INFO - Performance vs random agent over 1000 games: {'v0': 0.895, 'random player': 0.105, 'tie': 0.0}
+2020-07-23 16:00:41,126 - __main__ - INFO - saved model state_dict at models/agent3/v0
+2020-07-23 16:00:41,236 - __main__ - INFO - saved memory and learning iters count at models/agent3/memory
+2020-07-23 16:00:41,236 - __main__ - INFO - Total agent learning iters: 100000
+2020-07-23 16:00:41,236 - __main__ - INFO - DONE

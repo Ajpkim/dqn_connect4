@@ -1,9 +1,10 @@
+# initial_config
 random_seed: 3
 eval_best: True
 eval_random: True
 eval_episodes: 500
 best_model: models/best_models/arch0
-epochs: 10
+epochs: 25
 iters: 10000
 n_episodes: 5
 
@@ -15,3 +16,6 @@ Trainer:
   eps_min: 0.1
   eps_freq: 10000
   eps_decrement: .01
+  blank: 123
+
+# use dict unpacking and kwargs**?

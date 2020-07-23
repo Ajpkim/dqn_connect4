@@ -21,9 +21,21 @@ from self_play_episodes import self_play_episodes
 from trainer import Trainer
 from util_players import RandomPlayer, HumanPlayer
 
+## same output for all inputs...
+## is architecture not appropriate?
+## revert back to rewards only for pre-terminal actions?
+
+### AGENT ONLY LEARNS TO CONSECUTIVELY PLAY IN THE SAME COL... 
+## Do i need to code the board the same always so that agent only sees its own actions as 1's?
+## as in correct for switch of pov in self-play experience tuples... am I currently making it decode
+## turn order also and this is a large burden?
+
+## Should I add param for trying out different net architectures in agent class?
+
+
 ### SOMETHING WRONG... PERFORMANCE ALWAYS .498% VS BEST, TRIED DIFFERENT ARCHITECTURES.
 ### inspect learning steps, saving/loading models, and training loop in main
-### Best model is being set to random fresh network and still winning every epoch...
+### "Best model" is being set to random fresh network and still winning every epoch...
 ## the winning percentages are consistently 0, 1, .498 ... wierd...
 
 parser = argparse.ArgumentParser()
@@ -51,7 +63,7 @@ logger.info('\n\n----------   NEW LOG   ----------\n')
 logger.info(f'config_file: {ARGS.config_file}')
 logger.info(f'load_file: {ARGS.load_file}')
 logger.info(f'save_file: {ARGS.save_file}')
-logger.info(f'training params: {config}')
+logger.info(f'config params: {config}')
 
 model_dir, model_name = os.path.split(ARGS.save_file)
 memory_file = model_dir + '/memory'
@@ -60,25 +72,23 @@ agent = DeepQAgent(name=model_name)
 if ARGS.load_file:
     agent.load_model(ARGS.load_file)
     logger.info('loaded model')
-    agent.load_memory(memory_file)
-    logger.info('loaded memory')
+    agent.load_memory_learning_iters(memory_file)
+    logger.info('loaded memory and learning iters count')
 
-trainer = Trainer(agent=agent, 
-                    lr=config['lr'],
-                    gamma=config['gamma'],
-                    batch_size=config['batch_size'], 
-                    eps=config['eps'])
+trainer = Trainer(agent=agent, **config['Trainer'])
 evaluator = Evaluator()
 
-################################################
-### TRAINING
+while len(agent.replay_buffer.memory) < agent.replay_buffer.capacity:
+    trainer.self_play(100)
+    logger.info('Building memory before learning')
+
+#####################  TRAINING  ###########################
 for epoch in range(config['epochs']):
-    logger.info(f'Starting epoch {epoch}')
+    logger.info(f'EPOCH {epoch}')
     trainer.train(iters=config['iters'], n_episodes=config['n_episodes'])
     
     ## EVALUATION PHASE
     if config['eval_best']:
-        logger.info('Entering evalutation phase')
         best_agent = DeepQAgent(name='best')
         best_agent.load_model(config['best_model'])
         results, percentages = evaluator.evaluate(agent_1=agent, agent_2=best_agent, n_episodes=config['eval_episodes'])
@@ -98,9 +108,10 @@ for epoch in range(config['epochs']):
     
     agent.save_model(ARGS.save_file)
     logger.info(f'saved model state_dict at {ARGS.save_file}')
-    agent.save_memory(memory_file)
-    logger.info(f'saved memory at {memory_file}')
+    agent.save_memory_learning_iters(memory_file)
+    logger.info(f'saved memory and learning iters count at {memory_file}')
 
+logger.info(f'Total agent learning iters: {agent.learning_iters}')
 logger.info('DONE')
 ################################################
 
