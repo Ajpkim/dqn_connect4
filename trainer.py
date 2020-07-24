@@ -1,12 +1,15 @@
+import logging
 import numpy as np
 import pdb
 import torch
 import torch.nn as nn
 
+from logger import *
 from deep_q_agent import DeepQAgent
 from self_play_episodes import self_play_episodes
 from mdp import Connect4MDP
 
+logger = logging.getLogger(__name__)
 
 class Trainer:
     """
@@ -33,11 +36,7 @@ class Trainer:
         Gathers experiece tuples over n_episodes and pushes them to agent replay buffer.
         """        
         eps = self.eps(self.agent.learning_iters)
-        experiences = self_play_episodes(self.mdp, self.agent, n_episodes, eps)
-        
-        ### DEBUGGIN WITH EPS == 0        
-        # experiences = self_play_episodes(self.mdp, self.agent, n_episodes, 0)
-               
+        experiences = self_play_episodes(self.mdp, self.agent, n_episodes, eps)               
         for state, action, reward, next_state, done in experiences:
             self.agent.replay_buffer.push(state, action, reward, next_state, done)
 
@@ -86,6 +85,11 @@ class Trainer:
         self.agent.learning_iters += 1
         if self.agent.learning_iters % self.agent.update_target_freq == 0:
             self.agent.update_target_net()
+
+
+            logger.info('Updated target net')
+
+
 
     def train(self, iters, n_episodes):
         """

@@ -21,8 +21,9 @@ class DeepQAgent(Agent):
         - mem_size: capacity of agent's replay buffer for storing recent experience tuples
         - target_freq: number of learning steps between updates to target esimtation network
     """
-    def __init__(self, name='DQAgent', mem_size=10000, target_freq=10000):
+    def __init__(self, name='DQAgent', mem_size=10000, target_freq=5000):
         self.name = name
+        self.action_space = [x for x in range(7)]
         self.replay_buffer = ReplayBuffer(capacity=mem_size)
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         self.policy_net = DeepQNet().to(self.device)
@@ -30,17 +31,28 @@ class DeepQAgent(Agent):
         self.update_target_freq = target_freq 
         self.learning_iters = 0
 
-    def select_action(self, mdp, eps):
-        "Episilon greedy action selection for training given mdp"
+    def select_action(self, state, eps, valid_moves):
+        "Episilon greedy action selection for training given state"
         if random.random() < eps:
-            action = random.choice(mdp.valid_moves())
+            action = random.choice(valid_moves)
         else:
-            state = mdp.get_state()
-            invalid_moves = mdp.invalid_moves()
+            invalid_moves = [a for a in self.action_space if a not in valid_moves]
             action_estimates = self.action_estimates(state)
             action_estimates[invalid_moves] = -float('inf')
             action = torch.argmax(action_estimates).item()
         return action 
+
+    # def select_action(self, mdp, eps):
+    #     "Episilon greedy action selection for training given mdp"
+    #     if random.random() < eps:
+    #         action = random.choice(mdp.valid_moves())
+    #     else:
+    #         state = mdp.get_state()
+    #         invalid_moves = mdp.invalid_moves()
+    #         action_estimates = self.action_estimates(state)
+    #         action_estimates[invalid_moves] = -float('inf')
+    #         action = torch.argmax(action_estimates).item()
+    #     return action 
     
     def get_next_move(self, board):
         "Return best valid move"

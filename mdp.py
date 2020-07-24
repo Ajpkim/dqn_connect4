@@ -46,7 +46,7 @@ class Connect4MDP(Connect4):
         return invalid_cols
 
     def check_game_over(self):
-        if self.state == 0:
+        if self.status == 0:
             return False
         return True
 

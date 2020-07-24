@@ -14,7 +14,7 @@ from agent import Agent
 from connect4 import Connect4
 from deep_q_agent import DeepQAgent
 from evaluator import Evaluator
-from logger import get_logger
+from logger import setup_logger
 from mdp import Connect4MDP
 from replay_buffer import ReplayBuffer
 from self_play_episodes import self_play_episodes
@@ -24,6 +24,12 @@ from util_players import RandomPlayer, HumanPlayer
 ## same output for all inputs...
 ## is architecture not appropriate?
 ## revert back to rewards only for pre-terminal actions?
+
+
+
+# converges to same outputs very quickly. Begins with very similar outputs as well.
+# ---> very quickly adapts to produce similar outputs for all inputs (tested with random inputs)
+
 
 ### AGENT ONLY LEARNS TO CONSECUTIVELY PLAY IN THE SAME COL... 
 ## Do i need to code the board the same always so that agent only sees its own actions as 1's?
@@ -52,7 +58,7 @@ random_seed = config['random_seed']
 torch.manual_seed(random_seed)
 np.random.seed(random_seed)
 
-setup_logger(ARGS.log_file)  # handles basicConfig()
+setup_logger(ARGS.log_file)
 logger = logging.getLogger(__name__)
 
 logger.info('\n\n----------   NEW LOG   ----------\n')
