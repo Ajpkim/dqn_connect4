@@ -1,31 +1,22 @@
 import logging
 
 
-# NO IDEA WHY CAN'T WRITE OUT DEBUG/INFO MESSAGES W/CUSTOM LOGGER HERE WITHOUT CALL BASICCONFIG()...
+def setup_logger(log_file):
+    log_format = '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+    logging.basicConfig(filename=log_file, level=logging.DEBUG, format=log_format)
 
-def get_logger(log_file) -> logging.Logger:
-
-    "Initialize and return logger that writes to given file"
-
-
-    logger = logging.getLogger(name=__name__)
-    
+def get_file_handler(log_file, level=10):
     file_handler = logging.FileHandler(log_file, mode='a')
-    file_handler.setLevel(logging.INFO)
-    console_handler = logging.StreamHandler()
-    console_handler.setLevel(logging.DEBUG)
-
-    # create formatters for handlers
-    file_format = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+    file_handler.setLevel(level)
+    log_format = '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+    file_format = logging.Formatter(log_format)
     file_handler.setFormatter(file_format)
-    console_format = logging.Formatter('%(asctime)s - %(message)s')
-    console_handler.setFormatter(console_format)
-    
-    # add handlers to logger
-    logger.addHandler(file_handler)
-    logger.addHandler(console_handler)
-    # logger.propagate = False
+    return file_handler
+
+def get_logger(name, log_file=None, level=10):
+    log_file = log_file if log_file else name + '.log'
+    logger = logging.getLogger(name)
+    logger.setLevel(level)
+    logger.addHandler(get_file_handler(log_file, level))
+    logger.propagate = False
     return logger
-
-
-

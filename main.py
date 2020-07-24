@@ -52,13 +52,9 @@ random_seed = config['random_seed']
 torch.manual_seed(random_seed)
 np.random.seed(random_seed)
 
-# HOW CAN I DO THIS W/O CALLING BASICCONFIG()?
-logging.basicConfig(filename=ARGS.log_file, 
-                    filemode='a',
-                    level=logging.DEBUG,
-                    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-
+setup_logger(ARGS.log_file)  # handles basicConfig()
 logger = logging.getLogger(__name__)
+
 logger.info('\n\n----------   NEW LOG   ----------\n')
 logger.info(f'config_file: {ARGS.config_file}')
 logger.info(f'load_file: {ARGS.load_file}')
