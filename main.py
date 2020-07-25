@@ -21,23 +21,26 @@ from self_play_episodes import self_play_episodes
 from trainer import Trainer
 from util_players import RandomPlayer, HumanPlayer
 
+
+### Investigate whether I should be learning online with policy net 
+        ## refer to paper
+
+# something about detaching or computation graph beging screwed up?
+
+## Maybe just needs more training.
+## Write min max to test against.
+
 ## same output for all inputs...
 ## is architecture not appropriate?
 ## revert back to rewards only for pre-terminal actions?
-
 
 
 # converges to same outputs very quickly. Begins with very similar outputs as well.
 # ---> very quickly adapts to produce similar outputs for all inputs (tested with random inputs)
 
 
-# could be an issue with eval methods given different board states
-
-
 ### AGENT ONLY LEARNS TO CONSECUTIVELY PLAY IN THE SAME COL... 
-## Do i need to code the board the same always so that agent only sees its own actions as 1's?
-## as in correct for switch of pov in self-play experience tuples... am I currently making it decode
-## turn order also and this is a large burden?
+
 
 ## Should I add param for trying out different net architectures in agent class?
 

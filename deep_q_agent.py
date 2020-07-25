@@ -13,11 +13,14 @@ from logger import *
 from mdp import Connect4MDP
 from replay_buffer import ReplayBuffer
 
+# log_file='AE.log'
+# setup_logger(log_file='AE.log')
+# logger = get_logger(__name__, log_file=log_file, level=10)
 
-setup_logger(log_file='AE.log')
-logger = logging.getLogger(__name__)
-
-
+# logger = logging.getLogger(__name__)
+# logger.addHandler(get_file_handler(log_file='AE.log'))
+# logger.setLevel(10)
+# logger.propagate = False
 
 class DeepQAgent(Agent):
     """
@@ -39,33 +42,15 @@ class DeepQAgent(Agent):
         self.learning_iters = 0
 
     def select_action(self, state, eps, valid_moves):
-        "Episilon greedy action selection for training given state"
+        "Episilon greedy action selection for training"
         if random.random() < eps:
             action = random.choice(valid_moves)
         else:
-
             invalid_moves = [a for a in self.action_space if a not in valid_moves]
             action_estimates = self.action_estimates(state)
             action_estimates[invalid_moves] = -float('inf')
             action = torch.argmax(action_estimates).item()
-            
-            logger.info(f'state \n\n {state.reshape(6,7)}')
-            logger.info(f'action_estimates: {action_estimates}')
-            logger.info(f'action: {action}')
-
         return action 
-
-    # def select_action(self, mdp, eps):
-    #     "Episilon greedy action selection for training given mdp"
-    #     if random.random() < eps:
-    #         action = random.choice(mdp.valid_moves())
-    #     else:
-    #         state = mdp.get_state()
-    #         invalid_moves = mdp.invalid_moves()
-    #         action_estimates = self.action_estimates(state)
-    #         action_estimates[invalid_moves] = -float('inf')
-    #         action = torch.argmax(action_estimates).item()
-    #     return action 
     
     def get_next_move(self, board):
         "Return best valid move"
@@ -84,7 +69,16 @@ class DeepQAgent(Agent):
         state = torch.from_numpy(state).to(self.device).float()
         with torch.no_grad():
             action_estimates = self.policy_net(state)
+        
+        # logger.info(f'state \n\n {state.reshape(6,7)}')
+        # logger.info(f'action_estimates: {action_estimates}')
+        # logger.info(f'action: {action}')
+
+
         return action_estimates
+
+
+
     
     def update_target_net(self):
         self.target_net = copy.deepcopy(self.policy_net) 

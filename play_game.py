@@ -1,5 +1,7 @@
 import random
 from connect4 import Connect4
+from deep_q_agent import DeepQAgent
+from mdp import Connect4MDP
 
 def play_game(p1, p2, shuffle_order=True, verbose=False):
     "Return 1 for p1 win, 2 for p2 win, 0 for tie"
@@ -11,7 +13,7 @@ def play_game(p1, p2, shuffle_order=True, verbose=False):
     else: 
         turn = p1_id
     
-    game = Connect4()
+    game = Connect4MDP()
     if verbose:
         print('New game!')
     
@@ -34,7 +36,12 @@ def play_game(p1, p2, shuffle_order=True, verbose=False):
                 print(game)
                 print("player 2's turn")
 
-            move = p2.get_next_move(game.board)
+            if type(p2) is DeepQAgent:
+                flipped_board = game.get_flipped_board()
+                move = p2.get_next_move(flipped_board)
+            else:
+                move = p2.get_next_move(game.board)
+    
             if move not in game.valid_moves():
                 print(f'Illegal move. Random move ({move}) chosen instead.')
                 move = random.choice(game.valid_moves())

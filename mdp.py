@@ -16,7 +16,6 @@ class Connect4MDP(Connect4):
         self.turns = 0
 
     def reward_fn(self, id) -> int:
-
         if self.status == 0:
             return 0.0  # ongoing game
 
@@ -27,7 +26,6 @@ class Connect4MDP(Connect4):
             return self.rewards['win']
         else:
             return self.rewards['loss']
-
 
     def make_move(self, col, id):
         super().make_move(col, id)
