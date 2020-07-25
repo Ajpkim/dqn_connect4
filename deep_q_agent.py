@@ -6,10 +6,17 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
+
 from agent import Agent
 from deep_q_net import DeepQNet, DeepQNet2
+from logger import *
 from mdp import Connect4MDP
 from replay_buffer import ReplayBuffer
+
+
+setup_logger(log_file='AE.log')
+logger = logging.getLogger(__name__)
+
 
 
 class DeepQAgent(Agent):
@@ -36,10 +43,16 @@ class DeepQAgent(Agent):
         if random.random() < eps:
             action = random.choice(valid_moves)
         else:
+
             invalid_moves = [a for a in self.action_space if a not in valid_moves]
             action_estimates = self.action_estimates(state)
             action_estimates[invalid_moves] = -float('inf')
             action = torch.argmax(action_estimates).item()
+            
+            logger.info(f'state \n\n {state.reshape(6,7)}')
+            logger.info(f'action_estimates: {action_estimates}')
+            logger.info(f'action: {action}')
+
         return action 
 
     # def select_action(self, mdp, eps):

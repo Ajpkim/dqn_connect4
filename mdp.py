@@ -37,13 +37,29 @@ class Connect4MDP(Connect4):
         "update and return current state"
         self.state = self.board.flatten()
         return self.state
-
+    
     def invalid_moves(self):
         invalid_cols = []
         for col in range(self.cols):
             if self.board[0, col] != 0:
                 invalid_cols.append(col)
         return invalid_cols
+
+    def get_flipped_state(self):
+        state = self.get_state()
+        flipped_state = np.zeros(len(state))
+        for idx, element in enumerate(state):
+            if element == 0:
+                new = 0
+            elif element == 1:
+                new = -1
+            else: new = 1 
+            flipped_state[idx] = new
+        return flipped_state
+    
+    def get_flipped_board(self):
+        flipped_state = self.get_flipped_state()
+        return flipped_state.reshape(self.rows, self.cols)
 
     def check_game_over(self):
         if self.status == 0:

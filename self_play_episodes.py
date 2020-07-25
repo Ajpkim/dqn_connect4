@@ -4,17 +4,17 @@ from logger import *
 from mdp import Connect4MDP
 from deep_q_agent import DeepQAgent
 
-
-def flip_state(state):
-    flipped_state = np.zeros(len(state))
-    for idx, element in enumerate(state):
-        if element == 0:
-            new = 0
-        elif element == 1:
-            new = -1
-        else: new = 1 
-        flipped_state[idx] = new
-    return flipped_state
+### Moved this within mdp class
+# def flip_state(state):
+#     flipped_state = np.zeros(len(state))
+#     for idx, element in enumerate(state):
+#         if element == 0:
+#             new = 0
+#         elif element == 1:
+#             new = -1
+#         else: new = 1 
+#         flipped_state[idx] = new
+#     return flipped_state
 
 def self_play_episodes(mdp: Connect4MDP, agent: DeepQAgent, episodes: int, eps: float) -> list:
     """
@@ -39,7 +39,7 @@ def self_play_episodes(mdp: Connect4MDP, agent: DeepQAgent, episodes: int, eps: 
                 turn = p2_id
         
             elif turn == p2_id:
-                state = flip_state(state)
+                state = mdp.get_flipped_state()
                 action = agent.select_action(state, eps, mdp.valid_moves())
                 states_actions.append((state, action))
                 state = mdp.make_move(action, id=p2_id)

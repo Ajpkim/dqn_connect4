@@ -17,8 +17,7 @@ class Connect4:
             self.turns += 1
             self.check_winning_move(col)
         else:
-            raise Exception(
-                f"Illegal move. Attemped to play in column {col}. Valid moves: {self.valid_moves()}")
+            raise Exception(f"Illegal move. Attemped to play in column {col}. Valid moves: {self.valid_moves()}")
 
     def col_height(self, col):
         "Return number of game pieces played in given col"

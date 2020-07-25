@@ -1,8 +1,8 @@
 import random
 
 class RandomPlayer:
-    def __init__(self):
-        self.name = 'random player'
+    def __init__(self, name='random player'):
+        self.name = name
 
     def valid_moves(self, board):
         valid_cols = []
@@ -22,8 +22,8 @@ class RandomPlayer:
         return 'Random Connect4 Player'
 
 class HumanPlayer:
-    def __init__(self):
-        self.name = 'human'
+    def __init__(self, name='human'):
+        self.name = name
 
     def get_next_move(self, board):
         return int(input('select a move human: '))

@@ -31,6 +31,9 @@ from util_players import RandomPlayer, HumanPlayer
 # ---> very quickly adapts to produce similar outputs for all inputs (tested with random inputs)
 
 
+# could be an issue with eval methods given different board states
+
+
 ### AGENT ONLY LEARNS TO CONSECUTIVELY PLAY IN THE SAME COL... 
 ## Do i need to code the board the same always so that agent only sees its own actions as 1's?
 ## as in correct for switch of pov in self-play experience tuples... am I currently making it decode
