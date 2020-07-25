@@ -13,7 +13,9 @@ logger = logging.getLogger(__name__)
 
 class Trainer:
     """
-    ... 
+    Class for training deep q agents and tuning hyperparameters. 
+    Guides agent through self play to build data for training and then learns
+    from random samples drawn from agent's replay_buffer.
     """
     def __init__(self, agent=DeepQAgent(), lr=.005, gamma=.99, batch_size=64, eps_max=1, eps_min=.1, eps_freq=10000, eps_decrement=.01, *args, **kwargs):
         self.mdp = Connect4MDP()

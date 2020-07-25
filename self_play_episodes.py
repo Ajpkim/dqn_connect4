@@ -37,9 +37,18 @@ def self_play_episodes(mdp: Connect4MDP, agent: DeepQAgent, episodes: int, eps: 
         # Update final entries with rewards wrt game outcome
         p1_reward = mdp.reward_fn(id=p1_id)
         p2_reward = mdp.reward_fn(id=p2_id)
-        ### PASSING REWARD TO ALL EXPERIENCES IN GAME ... p1 rewards to even turns, p2 to odd
-        states_actions_rewards[::2] = map(lambda tup: tup[0:2] + (p1_reward,), states_actions_rewards[::2])
-        states_actions_rewards[1::2] = map(lambda tup: tup[0:2] + (p2_reward,), states_actions_rewards[1::2])
+
+###################### Passing reward only to terminal experiences        
+        if len(states_actions_rewards) % 2 != 0:  # add reward to correct sequence
+            states_actions_rewards[-1] = states_actions_rewards[-1][0:2] + (p1_reward,)
+            states_actions_rewards[-2] = states_actions_rewards[-2][0:2] + (p2_reward,)
+        else:
+            states_actions_rewards[-1] = states_actions_rewards[-1][0:2] + (p2_reward,)
+            states_actions_rewards[-2] = states_actions_rewards[-2][0:2] + (p1_reward,)
+############### PASSING REWARD TO ALL EXPERIENCES IN GAME ... p1 rewards to even turns, p2 to odd
+        # states_actions_rewards[::2] = map(lambda tup: tup[0:2] + (p1_reward,), states_actions_rewards[::2])
+        # states_actions_rewards[1::2] = map(lambda tup: tup[0:2] + (p2_reward,), states_actions_rewards[1::2])
+######################
 
         # new_state is from player POV i.e. p1 sees turn 0, turn 2, turn 4 board states, etc.
         states = [x[0] for x in states_actions_rewards]
@@ -55,8 +64,7 @@ def self_play_episodes(mdp: Connect4MDP, agent: DeepQAgent, episodes: int, eps: 
     
     return all_experiences
 
-########### Passing reward only to terminal experiences
-        
+########### Passing reward only to terminal experiences        
         # if len(states_actions_rewards) % 2 != 0:  # add reward to correct sequence
         #     states_actions_rewards[-1] = states_actions_rewards[-1][0:2] + (p1_reward,)
         #     states_actions_rewards[-2] = states_actions_rewards[-2][0:2] + (p2_reward,)

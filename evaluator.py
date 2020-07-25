@@ -42,10 +42,10 @@ class Evaluator:
 
 	def play_game(self, agent_1, agent_2):
 		"""
-		Function to simulate a connect4 game between agent1 and agent2. 
+		Method to simulate a connect4 game between agent1 and agent2. 
 		Need to provide a flipped board to Q Agents which play as player2.
 
-		Returns: name of winning agent, or 'tie'
+		Returns: name of winning agent or 'tie'
 		"""
 		agent_1_id = 1
 		agent_2_id = -1

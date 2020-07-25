@@ -27,7 +27,7 @@ from util_players import RandomPlayer, HumanPlayer
 
 # something about detaching or computation graph beging screwed up?
 
-## Maybe just needs more training.
+## Maybe just needs more training... get setup on colab
 ## Write min max to test against.
 
 ## same output for all inputs...
@@ -43,12 +43,6 @@ from util_players import RandomPlayer, HumanPlayer
 
 
 ## Should I add param for trying out different net architectures in agent class?
-
-
-### SOMETHING WRONG... PERFORMANCE ALWAYS .498% VS BEST, TRIED DIFFERENT ARCHITECTURES.
-### inspect learning steps, saving/loading models, and training loop in main
-### "Best model" is being set to random fresh network and still winning every epoch...
-## the winning percentages are consistently 0, 1, .498 ... wierd...
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--config_file", default='config/default.yaml', help='Configuration file location.')
@@ -76,6 +70,7 @@ logger.info(f'config params: {config}')
 model_dir, model_name = os.path.split(ARGS.save_file)
 memory_file = model_dir + '/memory'
 agent = DeepQAgent(name=model_name)
+logger.info(f'Device: {agent.device}')
 
 if ARGS.load_file:
     agent.load_model(ARGS.load_file)
