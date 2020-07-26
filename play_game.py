@@ -40,7 +40,7 @@ def play_game(agent_1, agent_2, shuffle_order=True, verbose=False):
                 print(game)
                 print("player 2's turn")
 
-            if type(p2) is DeepQAgent:
+            if type(agent_2) is DeepQAgent:
                 flipped_board = game.get_flipped_board()
                 move = agent_2.get_next_move(flipped_board)
             else:
@@ -54,7 +54,7 @@ def play_game(agent_1, agent_2, shuffle_order=True, verbose=False):
 
     if game.status == p1_id:
         outcome = agent_1.name
-    elif game.status == p2.id:
+    elif game.status == p2_id:
         outcome = agent_2.name
     else:
         outcome = 'tie'

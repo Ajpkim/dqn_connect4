@@ -21,26 +21,42 @@ from self_play_episodes import self_play_episodes
 from trainer import Trainer
 from util_players import RandomPlayer, HumanPlayer
 
+## Try CNN and use 2d board state as input
+# so One Hot the board for p1, p2 posistion. Only need 2dim since 2 blanks == empty space. 
+# Q: would it help network learn if i redundantly give it 3 channels?
+# One Hotting seems necessary regardless of cnn or not now
+## seems best to handle input processing within the specific architectures and just pass board state around
+# can handle board encoding as initial step in the forward pass and then just always give agent board state. Simpler.
+    # just change self play epsiodes and a couple thigns in agent methods
 
-### Investigate whether I should be learning online with policy net 
-        ## refer to paper
 
-# something about detaching or computation graph beging screwed up?
 
-## Maybe just needs more training... get setup on colab
+# Should I do something more systematic wrt epochs and data generation (self play) as 
+# in train through all data in replay buffer before filling it again for next epoch etc. 
+# and use torch dataloaders?
+
+
+## exploit symmetry by adding double entries for each experience of a flipped board? 
+# Will this make it easier to learn symmetry?
+
+
+# should store data on losses and eval performance with agent info as in memory and learning iter count
+
+
+### Is it hard to learn connect4 with current archetecture bc relationship btwn states and rewards is NOT SMOOTH???
+## Can I make learning tractable with some search help???
+# --> network arch gets more complicated if I want to enable MCTS as well, multiple network heads computing
+# prob of action being highest value as well as likelihood of next move being winning move if replicate alphazero
+
+
+### Pretty sure I'm messing up the learning step and gradient while gathering q vals and next q vals for q targets
+## Does loss fn expect 2d tensor?
+
+
 ## Write min max to test against.
-
-## same output for all inputs...
-## is architecture not appropriate?
-## revert back to rewards only for pre-terminal actions?
-
-
-# converges to same outputs very quickly. Begins with very similar outputs as well.
-# ---> very quickly adapts to produce similar outputs for all inputs (tested with random inputs)
 
 
 ### AGENT ONLY LEARNS TO CONSECUTIVELY PLAY IN THE SAME COL... 
-
 
 ## Should I add param for trying out different net architectures in agent class?
 

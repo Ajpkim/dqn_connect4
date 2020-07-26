@@ -13,14 +13,8 @@ from logger import *
 from mdp import Connect4MDP
 from replay_buffer import ReplayBuffer
 
-# log_file='AE.log'
-# setup_logger(log_file='AE.log')
-# logger = get_logger(__name__, log_file=log_file, level=10)
-
-# logger = logging.getLogger(__name__)
-# logger.addHandler(get_file_handler(log_file='AE.log'))
-# logger.setLevel(10)
-# logger.propagate = False
+log_file='testing_logs/AE.log'
+logger = get_logger(__name__, log_file=log_file, level=10)
 
 class DeepQAgent(Agent):
     """
@@ -31,14 +25,13 @@ class DeepQAgent(Agent):
         - mem_size: capacity of agent's replay buffer for storing recent experience tuples
         - target_freq: number of learning steps between updates to target esimtation network
     """
-    def __init__(self, name='DQAgent', mem_size=10000, target_freq=5000):
+    def __init__(self, name='DQAgent', mem_size=10000):
         self.name = name
         self.action_space = [x for x in range(7)]
         self.replay_buffer = ReplayBuffer(capacity=mem_size)
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         self.policy_net = DeepQNet().to(self.device)
         self.target_net = copy.deepcopy(self.policy_net)
-        self.update_target_freq = target_freq 
         self.learning_iters = 0
 
     def select_action(self, state, eps, valid_moves):
@@ -70,21 +63,31 @@ class DeepQAgent(Agent):
         with torch.no_grad():
             action_estimates = self.policy_net(state)
         
+        
         # logger.info(f'state \n\n {state.reshape(6,7)}')
         # logger.info(f'action_estimates: {action_estimates}')
-        # logger.info(f'action: {action}')
-
+    
 
         return action_estimates
 
-
-
-    
     def update_target_net(self):
         self.target_net = copy.deepcopy(self.policy_net) 
     
     def encode_board(self, board):
-        return board.flatten()
+        ## ADJUSTING FOR CNN (WAS PREV JUST NP.FLATTEN(BOARD))
+        # return board.flatten()
+        "One-Hot the board into 3 dimensions for empty, self, opponent"
+        
+        encoded_board = np.zeros((3,6,7))
+        for row in range(6):
+            for col in range(7):
+                if board[row, col] == 0: encoded_board[0, row, col] = 1
+                elif board[row, col] == 1: encoded_board[1, row, col] = 1
+                else: encoded_board[2, row, col] = 1
+        
+        return encoded_board
+
+
 
     def save_memory_learning_iters(self, path):
         with open(path, 'wb') as f:
@@ -103,8 +106,9 @@ class DeepQAgent(Agent):
         torch.save(self.policy_net.state_dict(), path)
 
     def load_model(self, path):
-        self.policy_net.load_state_dict(torch.load(path))
-        self.target_net.load_state_dict(torch.load(path))
+        state_dict = torch.load(path, map_location=self.device)
+        self.policy_net.load_state_dict(state_dict)
+        self.target_net.load_state_dict(state_dict)
 
     def __repr__(self):
         return f'Deep Q Agent: {self.name}'    

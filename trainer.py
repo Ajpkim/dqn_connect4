@@ -17,9 +17,10 @@ class Trainer:
     Guides agent through self play to build data for training and then learns
     from random samples drawn from agent's replay_buffer.
     """
-    def __init__(self, agent=DeepQAgent(), lr=.005, gamma=.99, batch_size=64, eps_max=1, eps_min=.1, eps_freq=10000, eps_decrement=.01, *args, **kwargs):
+    def __init__(self, agent=DeepQAgent(), target_update_freq=500, lr=.005, gamma=.99, batch_size=64, eps_max=1, eps_min=.1, eps_freq=10000, eps_decrement=.01, *args, **kwargs):
         self.mdp = Connect4MDP()
         self.agent = agent
+        self.target_update_freq = target_update_freq
         self.optimizer = torch.optim.Adam(params=agent.policy_net.parameters(), lr=lr)
         self.loss_fn = nn.MSELoss()
         self.lr = lr
@@ -42,6 +43,7 @@ class Trainer:
         for state, action, reward, next_state, done in experiences:
             self.agent.replay_buffer.push(state, action, reward, next_state, done)
 
+
     def learn(self):
         """
         Update model with random batch from agent replay buffer.
@@ -54,15 +56,14 @@ class Trainer:
         dones = [x.done for x in batch]
 
         self.optimizer.zero_grad()
-        q_vals = self.agent.policy_net(states)[range(len(actions)), actions]  # Q vals for paths taken
-        q_next_vals = self.agent.target_net(next_states)
-        q_next_vals[dones] = 0  # terminal states have no future expected value
+
+        ### DOES THIS INDEX OF QVALS MESS UP THE GRADIENT COMPUATIONS?
+        q_vals = self.agent.policy_net(states)[range(len(actions)), actions]  # Q vals for actions taken
+        q_next_vals = self.agent.target_net(next_states).detach()  # we don't care about grad wrt target net
+        q_next_vals[dones] = 0.0  # terminal states have no future expected value
         q_targets = rewards + self.gamma * torch.max(q_next_vals, dim=1)[0]
 
-        all_q_vals = self.agent.policy_net(states)
-
-
-
+        # all_q_vals = self.agent.policy_net(states)
         # print()
         # print('actions')
         # print(actions)
@@ -79,16 +80,27 @@ class Trainer:
 
         # breakpoint()
 
-
+        ### DO I NEED TO BE PASSING Q_VALS WITH GRADIENT SOMEHOW?
+        ### How is the gradient of q_vals being tracked here???????????????
         loss = self.loss_fn(q_targets, q_vals).to(self.agent.device)
+        # breakpoint()
+
         loss.backward()
+        
+        # for layer in self.agent.policy_net.named_parameters():
+            
+        # #     print(f'layer: {layer[0]}')
+        # #     print(f'grad:', layer[1].grad)
+
+        # # print('loss', loss)
+        # # print('q_vals grad:', q_vals.grad)
+        # # print('states:', )
+
         self.optimizer.step()
 
         self.agent.learning_iters += 1
-        if self.agent.learning_iters % self.agent.update_target_freq == 0:
+        if self.agent.learning_iters % self.target_update_freq == 0:
             self.agent.update_target_net()
-
-
             logger.info('Updated target net')
 
 

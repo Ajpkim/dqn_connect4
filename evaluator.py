@@ -9,13 +9,8 @@ from logger import setup_logger, get_file_handler, get_logger
 from mdp import Connect4MDP
 # class for evaluating new model is better than best model and replacing best if so
 
-log_file = 'EVAL.log'
-# setup_logger(log_file)
-logger = logging.getLogger()
+log_file = 'testing_logs/EVAL.log'
 logger = get_logger(__name__, log_file=log_file, level=10)
-# logger.setLevel(10)
-# logger.addHandler(get_file_handler(log_file))
-logger.propagate = False
 
 class Evaluator:
 	def __init__(self):
@@ -38,8 +33,6 @@ class Evaluator:
 		return results, percentages
 
 
-
-
 	def play_game(self, agent_1, agent_2):
 		"""
 		Method to simulate a connect4 game between agent1 and agent2. 
@@ -58,8 +51,8 @@ class Evaluator:
 			if turn == agent_1_id:
 				move = agent_1.get_next_move(game.board)
 				
-				logger.info(f'\n\n P1 state \n {game.board}')
-				logger.info(f'{agent_1.name} move {move}')
+				# logger.info(f'\n\n P1 state \n {game.board}')
+				# logger.info(f'{agent_1.name} move {move}')
 
 				game.make_move(move, agent_1_id)
 				turn = agent_2_id
@@ -69,8 +62,8 @@ class Evaluator:
 					flipped_board = game.get_flipped_board()
 					move = agent_2.get_next_move(flipped_board)	
 
-					logger.info(f'\n\n P2 state \n {flipped_board}')
-					logger.info(f'{agent_2.name} move {move}')
+					# logger.info(f'\n\n P2 state \n {flipped_board}')
+					# logger.info(f'{agent_2.name} move {move}')
 
 				else:
 					move = agent_2.get_next_move(game.board)
