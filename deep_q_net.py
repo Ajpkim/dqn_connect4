@@ -8,8 +8,8 @@ import torch.nn.functional as F
 class DeepQNet3(nn.Module):
     def __init__(self):
         super(DeepQNet3, self).__init__()
-        self.conv1 = nn.Conv2d(in_channels=3, out_channels=126, kernel_size=3, stride=1, padding=1)
-        self.bn1 = nn.BatchNorm2d(126)
+        self.conv1 = nn.Conv2d(in_channels=2, out_channels=84, kernel_size=3, stride=1, padding=1)
+        self.bn1 = nn.BatchNorm2d(84)
 
         self.res1
 
@@ -19,14 +19,13 @@ class DeepQNet3(nn.Module):
 
 
 
-    
     def encode_board(self, board):
-        encoded_board = np.zeros((3,6,7))
+        encoded_board = np.zeros((2,6,7))
         for row in range(6):
             for col in range(7):
-                if board[row, col] == 0: encoded_board[0, row, col] = 1
-                elif board[row, col] == 1: encoded_board[1, row, col] = 1
-                else: encoded_board[2, row, col] = 1
+                if board[row, col] == 0: continue
+                elif board[row, col] == 1: encoded_board[0, row, col] = 1
+                else: encoded_board[1, row, col] = 1
         
         return encoded_board
 

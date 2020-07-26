@@ -76,18 +76,16 @@ class DeepQAgent(Agent):
     def encode_board(self, board):
         ## ADJUSTING FOR CNN (WAS PREV JUST NP.FLATTEN(BOARD))
         # return board.flatten()
-        "One-Hot the board into 3 dimensions for empty, self, opponent"
+        "One-Hot the board for self, opponent. Return 2x6x7 array."
         
-        encoded_board = np.zeros((3,6,7))
+        encoded_board = np.zeros((2,6,7))
         for row in range(6):
             for col in range(7):
-                if board[row, col] == 0: encoded_board[0, row, col] = 1
-                elif board[row, col] == 1: encoded_board[1, row, col] = 1
-                else: encoded_board[2, row, col] = 1
+                if board[row, col] == 0: continue
+                elif board[row, col] == 1: encoded_board[0, row, col] = 1
+                else: encoded_board[1, row, col] = 1
         
         return encoded_board
-
-
 
     def save_memory_learning_iters(self, path):
         with open(path, 'wb') as f:

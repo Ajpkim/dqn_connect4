@@ -1,4 +1,4 @@
-random_seed: 3
+random_seed: 33
 eval_best: True
 eval_random: True
 eval_episodes: 500
@@ -9,9 +9,10 @@ n_episodes: 5
 
 Trainer:
   batch_size: 64
-  lr: .005
+  target_freq: 500  # adjust this so its a trainer attr not agent
+  lr: .01 #.005
   gamma: .95
   eps_max: 1.0
   eps_min: 0.1
-  eps_freq: 10000
-  eps_decrement: .01
+  eps_freq: 2500 #10000
+  eps_decrement: .05 #.01

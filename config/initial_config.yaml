@@ -9,6 +9,7 @@ iters: 10000
 n_episodes: 5
 
 Trainer:
+  update_target_freq: 500
   batch_size: 64
   lr: .005
   gamma: .95
