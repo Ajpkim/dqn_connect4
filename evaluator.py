@@ -7,7 +7,7 @@ from connect4 import Connect4
 from deep_q_agent import DeepQAgent
 from logger import setup_logger, get_file_handler, get_logger
 from mdp import Connect4MDP
-# class for evaluating new model is better than best model and replacing best if so
+
 
 log_file = 'testing_logs/EVAL.log'
 logger = get_logger(__name__, log_file=log_file, level=10)
