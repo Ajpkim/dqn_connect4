@@ -1,0 +1,38 @@
+2020-07-27 13:03:42,877 - __main__ - INFO - 
+
+----------   NEW LOG   ----------
+
+2020-07-27 13:03:42,877 - __main__ - INFO - config_file: config/config.yaml
+2020-07-27 13:03:42,877 - __main__ - INFO - load_file: 
+2020-07-27 13:03:42,877 - __main__ - INFO - save_file: models/agent7/v0
+2020-07-27 13:03:42,877 - __main__ - INFO - config params: {'random_seed': 33, 'eval_best': True, 'eval_random': True, 'eval_episodes': 500, 'best_model': 'models/best_models/arch0', 'epochs': 10, 'iters': 10, 'n_episodes': 5, 'Trainer': {'batch_size': 64, 'target_freq': 500, 'lr': 0.01, 'gamma': 0.95, 'eps_max': 1.0, 'eps_min': 0.1, 'eps_freq': 2500, 'eps_decrement': 0.05}}
+2020-07-27 13:03:42,915 - __main__ - INFO - Device: cpu
+2020-07-27 13:03:43,217 - __main__ - INFO - Building memory before learning
+2020-07-27 13:03:43,520 - __main__ - INFO - Building memory before learning
+2020-07-27 13:03:43,825 - __main__ - INFO - Building memory before learning
+2020-07-27 13:03:44,181 - __main__ - INFO - Building memory before learning
+2020-07-27 13:03:44,533 - __main__ - INFO - Building memory before learning
+2020-07-27 13:03:44,533 - __main__ - INFO - EPOCH 0
+2020-07-27 13:04:12,360 - __main__ - INFO - 
+
+----------   NEW LOG   ----------
+
+2020-07-27 13:04:12,361 - __main__ - INFO - config_file: config/config.yaml
+2020-07-27 13:04:12,361 - __main__ - INFO - load_file: 
+2020-07-27 13:04:12,361 - __main__ - INFO - save_file: models/agent7/v0
+2020-07-27 13:04:12,361 - __main__ - INFO - config params: {'random_seed': 33, 'eval_best': True, 'eval_random': True, 'eval_episodes': 500, 'best_model': 'models/best_models/arch3', 'epochs': 10, 'iters': 10, 'n_episodes': 5, 'Trainer': {'batch_size': 64, 'target_freq': 500, 'lr': 0.01, 'gamma': 0.95, 'eps_max': 1.0, 'eps_min': 0.1, 'eps_freq': 2500, 'eps_decrement': 0.05}}
+2020-07-27 13:04:12,403 - __main__ - INFO - Device: cpu
+2020-07-27 13:04:12,663 - __main__ - INFO - Building memory before learning
+2020-07-27 13:04:12,960 - __main__ - INFO - Building memory before learning
+2020-07-27 13:04:13,233 - __main__ - INFO - Building memory before learning
+2020-07-27 13:04:13,484 - __main__ - INFO - Building memory before learning
+2020-07-27 13:04:13,759 - __main__ - INFO - Building memory before learning
+2020-07-27 13:04:13,759 - __main__ - INFO - EPOCH 0
+2020-07-27 13:05:50,186 - __main__ - INFO - Performance vs best_model over 500 games: {'v0': 0.486, 'best': 0.514, 'tie': 0.0}
+2020-07-27 13:05:50,186 - __main__ - INFO - LOSS VS BEST_MODEL
+2020-07-27 13:07:03,007 - __main__ - INFO - Performance vs random agent over 500 games: {'v0': 0.78, 'random player': 0.22, 'tie': 0.0}
+2020-07-27 13:07:03,028 - __main__ - INFO - saved model state_dict at models/agent7/v0
+2020-07-27 13:07:03,116 - __main__ - INFO - saved memory and learning iters count at models/agent7/memory
+2020-07-27 13:07:03,116 - __main__ - INFO - EPOCH 1
+2020-07-27 13:08:49,493 - __main__ - INFO - Performance vs best_model over 500 games: {'v0': 0.0, 'best': 1.0, 'tie': 0.0}
+2020-07-27 13:08:49,493 - __main__ - INFO - LOSS VS BEST_MODEL

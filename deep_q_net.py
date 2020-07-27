@@ -25,11 +25,11 @@ import torch.nn.functional as F
 class ConvBlock(nn.Module):
     def __init__(self):
         super(ConvBlock, self).__init__()
-        self.conv1 = nn.Conv2d(in_channels=2, out_channels=84, kernel_size=3, stride=1, padding=1)
-        self.bn1 = nn.BatchNorm2d(num_features=84)
+        self.conv1 = nn.Conv2d(in_channels=3, out_channels=126, kernel_size=3, stride=1, padding=1)
+        self.bn1 = nn.BatchNorm2d(num_features=126)
 
     def forward(self, x):
-        x = x.view(-1, 2, 6, 7)  # flexible batch sizes
+        x = x.view(-1, 3, 6, 7)  # flexible batch sizes
         x = F.relu(self.bn1(self.conv1(x)))
         return x
 
@@ -37,10 +37,10 @@ class ConvBlock(nn.Module):
 class ResidualBlock(nn.Module):
     def __init__(self):
         super(ResidualBlock, self).__init__()
-        self.conv1 = nn.Conv2d(in_channels=84, out_channels=84, kernel_size=3, stride=1, padding=1, bias=False)
-        self.bn1 = nn.BatchNorm2d(num_features=84)
-        self.conv2 = nn.Conv2d(in_channels=84, out_channels=84, kernel_size=3, stride=1, padding=1, bias=False)
-        self.bn2 = nn.BatchNorm2d(num_features=84)
+        self.conv1 = nn.Conv2d(in_channels=126, out_channels=126, kernel_size=3, stride=1, padding=1, bias=False)
+        self.bn1 = nn.BatchNorm2d(num_features=126)
+        self.conv2 = nn.Conv2d(in_channels=126, out_channels=126, kernel_size=3, stride=1, padding=1, bias=False)
+        self.bn2 = nn.BatchNorm2d(num_features=126)
     
     def forward(self, x):
         residual = x
@@ -54,14 +54,14 @@ class ResidualBlock(nn.Module):
 class OutBlock(nn.Module):
     def __init__(self):
         super(OutBlock, self).__init__()
-        self.conv1 = nn.Conv2d(in_channels=84, out_channels=2, kernel_size=1, stride=1, padding=0, bias=False)  # NO padding
-        self.bn1 = nn.BatchNorm2d(num_features=2)
-        self.fc1 = nn.Linear(in_features=2*6*7, out_features=42, bias=True)
+        self.conv1 = nn.Conv2d(in_channels=126, out_channels=3, kernel_size=1, stride=1, padding=0, bias=False)  # NO padding
+        self.bn1 = nn.BatchNorm2d(num_features=3)
+        self.fc1 = nn.Linear(in_features=3*6*7, out_features=42, bias=True)
         self.fc2 = nn.Linear(in_features=42, out_features=7, bias=True)
 
     def forward(self, x):
         x = F.relu(self.bn1(self.conv1(x)))        
-        x = x.view(-1, 2*6*7)
+        x = x.view(-1, 3*6*7)
         x = F.relu(self.fc1(x))
         x = self.fc2(x)
         return x

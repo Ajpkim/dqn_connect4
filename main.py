@@ -21,14 +21,7 @@ from self_play_episodes import self_play_episodes
 from trainer import Trainer
 from util_players import RandomPlayer, HumanPlayer
 
-# Could be screwing up variable aliases wrt state and whatnot, things I'm casting to tensors
-# and storing as 'states' but are also active game states that are being manipulated
-
-# probably cleaner to not deal with flipping state etc and just encode player turn via a 3rd channel of all 1's or 0's
-# .. connect4 base class already has a turn counter so I could just use that when providing state from mdp
-#### will try as is now and come back to this.
-### will just be easier to say state = agent.encode_board(board) and then process state from there.
-# also keeps all the torch stuff out of mdp/games
+# add lr scheduler after some learning is evident
 
 
 ## Try CNN and use 2d board state as input
@@ -59,11 +52,7 @@ from util_players import RandomPlayer, HumanPlayer
 # prob of action being highest value as well as likelihood of next move being winning move if replicate alphazero
 
 
-### Pretty sure I'm messing up the learning step and gradient while gathering q vals and next q vals for q targets
-## Does loss fn expect 2d tensor?
-
-
-## Write min max to test against.
+## Write min max agent to test against.
 
 
 ### AGENT ONLY LEARNS TO CONSECUTIVELY PLAY IN THE SAME COL... 
@@ -114,6 +103,7 @@ while len(agent.replay_buffer.memory) < agent.replay_buffer.capacity:
 #####################  TRAINING  ###########################
 for epoch in range(config['epochs']):
     logger.info(f'EPOCH {epoch}')
+    print(f'EPOCH {epoch}')  # for when training on colab
     trainer.train(iters=config['iters'], n_episodes=config['n_episodes'])
     
     ## EVALUATION PHASE

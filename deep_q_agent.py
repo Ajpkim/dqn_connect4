@@ -14,8 +14,8 @@ from logger import *
 from mdp import Connect4MDP
 from replay_buffer import ReplayBuffer
 
-log_file='testing_logs/AE.log'
-logger = get_logger(__name__, log_file=log_file, level=10)
+# log_file='testing_logs/AE.log'
+# logger = get_logger(__name__, log_file=log_file, level=10)
 
 class DeepQAgent(Agent):
     """
@@ -31,11 +31,11 @@ class DeepQAgent(Agent):
         self.action_space = [x for x in range(7)]
         self.replay_buffer = ReplayBuffer(capacity=mem_size)
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-        self.policy_net = DeepQNet3().to(self.device)  # CHECK ARCHITECTURE
+        self.policy_net = DeepQNet3().to(self.device)  
         self.target_net = copy.deepcopy(self.policy_net)
         self.learning_iters = 0
 
-    def select_action(self, state, eps, valid_moves):
+    def select_action(self, state: np.array, eps: float, valid_moves: list) -> int:
         "Episilon greedy action selection for training"
         if random.random() < eps:
             action = random.choice(valid_moves)
@@ -46,47 +46,44 @@ class DeepQAgent(Agent):
             action = torch.argmax(action_estimates).item()
         return action 
     
-    def get_next_move(self, board):
-        "Return best valid move"
-        invalid_moves = []
+    def get_next_move(self, board: np.array) -> int:
+        "Return estimated best move when only given access to board."
+        valid_moves = []
         for col in range(len(board[0])):
-            if board[0, col] != 0:
-                invalid_moves.append(col)
+            if board[0, col] == 0:
+                valid_moves.append(col)
     
         state = self.encode_board(board)
-        action_estimates = self.action_estimates(state)
-        action_estimates[invalid_moves] = -float('inf')
-        return torch.argmax(action_estimates).item()
+        action = self.select_action(state, eps=0.0, valid_moves=valid_moves)
+        return action
 
-    def action_estimates(self, state):
+    def action_estimates(self, state: np.array) -> torch.tensor:
         "Return Q value estimates for all actions given state"
-        state = torch.from_numpy(state).to(self.device).float()
+        tensor_state = torch.tensor(state, dtype=torch.float32).to(self.device)
         with torch.no_grad():
-            action_estimates = self.policy_net(state)
-        
-        
-        # logger.info(f'state \n\n {state.reshape(6,7)}')
+            action_estimates = self.policy_net(tensor_state).squeeze()
+
+        # logger.info(f'state \n\n {state}')
         # logger.info(f'action_estimates: {action_estimates}')
     
-
         return action_estimates
 
     def update_target_net(self):
         self.target_net = copy.deepcopy(self.policy_net) 
     
-    def encode_board(self, board):
-        ## ADJUSTING FOR CNN (WAS PREV JUST NP.FLATTEN(BOARD))
-        # return board.flatten()
-        "One-Hot the board for self, opponent. Return 2x6x7 array."
-        encoded_board = np.zeros((2,6,7))
+    def encode_board(self, board: np.array) -> np.array:
+        "One-Hot the board for self opponent pieces. 3rd channel represents turn. Return 3x6x7 np array."
+        turns = 42
+        state = np.zeros((3,6,7))
         for row in range(6):
             for col in range(7):
-                if board[row, col] == 0: continue
-                elif board[row, col] == 1: encoded_board[0, row, col] = 1
-                else: encoded_board[1, row, col] = 1
+                if board[row, col] == 0: turns -= 1
+                elif board[row, col] == 1: state[0, row, col] = 1
+                else: state[1, row, col] = 1
         
-        return encoded_board
-        # return torch.tensor(encoded_board, dtype=torch.float32)
+        if turns % 2 == 0:
+            state[2,::] = 1
+        return state
 
     def save_memory_learning_iters(self, path):
         with open(path, 'wb') as f:

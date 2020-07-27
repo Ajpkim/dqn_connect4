@@ -49,15 +49,15 @@ class Trainer:
         Update model with random batch from agent replay buffer.
         """
         batch = self.agent.replay_buffer.sample(self.batch_size)
-        states = torch.tensor([x.state for x in batch]).float().to(self.agent.device)
+        states = torch.tensor([x.state for x in batch], dtype=torch.float32).to(self.agent.device)  # shape == (batch_size, 3, 6, 7)
         actions = [x.action for x in batch]
-        rewards = torch.tensor([x.reward for x in batch]).float().to(self.agent.device)
-        next_states = torch.tensor([x.next_state for x in batch]).float().to(self.agent.device)
+        rewards = torch.tensor([x.reward for x in batch], dtype=torch.float32).to(self.agent.device)
+        next_states = torch.tensor([x.next_state for x in batch], dtype=torch.float32).to(self.agent.device)
         dones = [x.done for x in batch]
 
         self.optimizer.zero_grad()
 
-        ### DOES THIS INDEX OF QVALS MESS UP THE GRADIENT COMPUATIONS?
+
         q_vals = self.agent.policy_net(states)[range(len(actions)), actions]  # Q vals for actions taken
         q_next_vals = self.agent.target_net(next_states).detach()  # we don't care about grad wrt target net
         q_next_vals[dones] = 0.0  # terminal states have no future expected value
@@ -80,11 +80,7 @@ class Trainer:
 
         # breakpoint()
 
-        ### DO I NEED TO BE PASSING Q_VALS WITH GRADIENT SOMEHOW?
-        ### How is the gradient of q_vals being tracked here???????????????
         loss = self.loss_fn(q_targets, q_vals).to(self.agent.device)
-        # breakpoint()
-
         loss.backward()
         
         # for layer in self.agent.policy_net.named_parameters():
@@ -101,7 +97,7 @@ class Trainer:
         self.agent.learning_iters += 1
         if self.agent.learning_iters % self.target_update_freq == 0:
             self.agent.update_target_net()
-            logger.info('Updated target net')
+            # logger.info('Updated target net')
 
 
 

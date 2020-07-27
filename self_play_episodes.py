@@ -5,6 +5,8 @@ from mdp import Connect4MDP
 from deep_q_agent import DeepQAgent
 
 
+
+### SWAPPING TO NO BOARD FLIPPING AND TO HANDLING STATE WITHIN AGENT CLASS
 def self_play_episodes(mdp: Connect4MDP, agent: DeepQAgent, episodes: int, eps: float) -> list:
     """
     Generate training date through self play. 
@@ -17,25 +19,24 @@ def self_play_episodes(mdp: Connect4MDP, agent: DeepQAgent, episodes: int, eps: 
     for i in range(episodes):
         mdp.reset()
         states_actions_rewards = []
-        state = mdp.get_state()   
         turn = p1_id
        
         while not mdp.check_game_over():
             if turn == p1_id:
+                state = agent.encode_board(mdp.board)
                 action = agent.select_action(state, eps, mdp.valid_moves())
                 states_actions_rewards.append((state, action, 0))
                 state = mdp.make_move(action, id=p1_id)
                 turn = p2_id
         
             elif turn == p2_id:
-                state = mdp.get_flipped_state()
+                state = agent.encode_board(mdp.board)
                 action = agent.select_action(state, eps, mdp.valid_moves())
                 states_actions_rewards.append((state, action, 0))
                 state = mdp.make_move(action, id=p2_id)
                 turn = p1_id
 
     # GAME OVER. Gather experience tuples: (state, action, reward, next_state, done)
-        # Update final entries with rewards wrt game outcome
         p1_reward = mdp.reward_fn(id=p1_id)
         p2_reward = mdp.reward_fn(id=p2_id)
 
@@ -67,15 +68,8 @@ def self_play_episodes(mdp: Connect4MDP, agent: DeepQAgent, episodes: int, eps: 
 
 
 
-
-
-
-
-
-
-
-
-
+####################################################
+### PRE CNN
 # def self_play_episodes(mdp: Connect4MDP, agent: DeepQAgent, episodes: int, eps: float) -> list:
 #     """
 #     Generate training date through self play. 
@@ -88,12 +82,11 @@ def self_play_episodes(mdp: Connect4MDP, agent: DeepQAgent, episodes: int, eps: 
 #     for i in range(episodes):
 #         mdp.reset()
 #         states_actions_rewards = []
-#         # board = mdp.board   
+#         state = mdp.get_state()   
 #         turn = p1_id
        
 #         while not mdp.check_game_over():
 #             if turn == p1_id:
-#                 state = mdp.b
 #                 action = agent.select_action(state, eps, mdp.valid_moves())
 #                 states_actions_rewards.append((state, action, 0))
 #                 state = mdp.make_move(action, id=p1_id)
@@ -136,11 +129,6 @@ def self_play_episodes(mdp: Connect4MDP, agent: DeepQAgent, episodes: int, eps: 
 #         all_experiences += states_actions_rewards_new_states_dones
     
 #     return all_experiences
-
-
-
-
-
 
 
 

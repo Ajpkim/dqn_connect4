@@ -29,7 +29,6 @@ class Connect4MDP(Connect4):
 
     def make_move(self, col, id):
         super().make_move(col, id)
-        return self.get_state()
 
     def invalid_moves(self):
         invalid_cols = []
@@ -38,57 +37,21 @@ class Connect4MDP(Connect4):
                 invalid_cols.append(col)
         return invalid_cols
 
-    def get_state(self):
-        "update and return current state"
-        # self.state = self.board.flatten()
-        
-        ## updated for CNN... could make more efficient by handling in make move, since 
-        ## would know exactly where to update with knowledge of most recent move and player id...
-        state = np.zeros((2,6,7))
+    def get_state(self) -> np.array:
+        "update and return current state as a 3x6x7 array"
+        state = np.zeros((3,6,7))
         for row in range(6):
             for col in range(7):
                 if self.board[row, col] == 0: continue
                 elif self.board[row, col] == 1: state[0, row, col] = 1
                 else: state[1, row, col] = 1
-        ### HANDLING PYTORCH CONVERSION IN REPLAY BUFFER / AGENT GENERALLY
-        # state = torch.tensor(state, dtype=torch.float32)
+
+        # indicate turn
+        if self.turns % 2 == 0: 
+            state[2,::] = 1
+        
         self.state = state
         return state
-
-    def get_flipped_state(self):
-        # flipped_state = self.get_state().clone()
-        # flipped_state = torch.flip(flipped_state, (0,))
-        flipped_state = self.get_state().copy()[::-1]
-        return flipped_state
-
-    ### Pre CNN method
-    # def get_flipped_state(self):
-    #     state = self.get_state()
-    #     flipped_state = np.zeros(len(state))
-    #     for idx, element in enumerate(state):
-    #         if element == 0:
-    #             new = 0
-    #         elif element == 1:
-    #             new = -1
-    #         else: new = 1 
-    #         flipped_state[idx] = new
-    #     return flipped_state
-    
-    
-    def get_flipped_board(self):
-        flipped_board = np.zeros((self.rows, self.cols))
-        for row in range(self.rows):
-            for col in range(self.cols):
-                if self.board[row, col] == 0: continue
-                elif self.board[row, col] == 1: flipped_board[row, col] = 2
-                else: flipped_board[row, col] = 1
-        
-        return flipped_board
-
-
-        # pre CNN method below:
-        # flipped_state = self.get_flipped_state()
-        # return flipped_state.reshape(self.rows, self.cols)
 
     def check_game_over(self):
         if self.status == 0:

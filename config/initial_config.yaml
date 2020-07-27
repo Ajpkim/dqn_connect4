@@ -3,7 +3,7 @@ random_seed: 3
 eval_best: True
 eval_random: True
 eval_episodes: 500
-best_model: models/best_models/arch0
+best_model: models/best_models/arch3
 epochs: 25
 iters: 10000
 n_episodes: 5
@@ -12,7 +12,7 @@ Trainer:
   update_target_freq: 500
   batch_size: 64
   lr: .005
-  gamma: .95
+  gamma: .99
   eps_max: 1.0
   eps_min: 0.1
   eps_freq: 10000

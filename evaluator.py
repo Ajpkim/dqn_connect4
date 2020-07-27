@@ -9,8 +9,8 @@ from logger import setup_logger, get_file_handler, get_logger
 from mdp import Connect4MDP
 
 
-log_file = 'testing_logs/EVAL.log'
-logger = get_logger(__name__, log_file=log_file, level=10)
+# log_file = 'testing_logs/EVAL.log'
+# logger = get_logger(__name__, log_file=log_file, level=10)
 
 class Evaluator:
 	def __init__(self):
@@ -42,7 +42,7 @@ class Evaluator:
 		"""
 		agent_1_id = 1
 		agent_2_id = 2
-		logger.info(f'Game between {agent_1.name} and {agent_2.name}')
+		# logger.info(f'Game between {agent_1.name} and {agent_2.name}')
 
 		turn = random.choice((agent_1_id, agent_2_id))
 		game = Connect4MDP()
@@ -58,15 +58,11 @@ class Evaluator:
 				turn = agent_2_id
 
 			elif turn == agent_2_id:
-				if type(agent_2) is DeepQAgent:
-					flipped_board = game.get_flipped_board()
-					move = agent_2.get_next_move(flipped_board)	
+				move = agent_2.get_next_move(game.board)	
 
-					# logger.info(f'\n\n P2 state \n {flipped_board}')
-					# logger.info(f'{agent_2.name} move {move}')
+				# logger.info(f'\n\n P2 state \n {flipped_board}')
+				# logger.info(f'{agent_2.name} move {move}')
 
-				else:
-					move = agent_2.get_next_move(game.board)
 				game.make_move(move, agent_2_id)
 				turn = agent_1_id
 		

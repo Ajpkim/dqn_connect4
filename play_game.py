@@ -40,12 +40,7 @@ def play_game(agent_1, agent_2, shuffle_order=True, verbose=False):
                 print(game)
                 print("player 2's turn")
 
-            if type(agent_2) is DeepQAgent:
-                flipped_board = game.get_flipped_board()
-                move = agent_2.get_next_move(flipped_board)
-            else:
-                move = agent_2.get_next_move(game.board)
-    
+            move = agent_2.get_next_move(game.board)    
             if move not in game.valid_moves():
                 print(f'Illegal move. Random move ({move}) chosen instead.')
                 move = random.choice(game.valid_moves())
