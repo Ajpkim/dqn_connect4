@@ -41,7 +41,7 @@ class Evaluator:
 		Returns: name of winning agent or 'tie'
 		"""
 		agent_1_id = 1
-		agent_2_id = -1
+		agent_2_id = 2
 		logger.info(f'Game between {agent_1.name} and {agent_2.name}')
 
 		turn = random.choice((agent_1_id, agent_2_id))

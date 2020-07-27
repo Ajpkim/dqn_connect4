@@ -21,6 +21,16 @@ from self_play_episodes import self_play_episodes
 from trainer import Trainer
 from util_players import RandomPlayer, HumanPlayer
 
+# Could be screwing up variable aliases wrt state and whatnot, things I'm casting to tensors
+# and storing as 'states' but are also active game states that are being manipulated
+
+# probably cleaner to not deal with flipping state etc and just encode player turn via a 3rd channel of all 1's or 0's
+# .. connect4 base class already has a turn counter so I could just use that when providing state from mdp
+#### will try as is now and come back to this.
+### will just be easier to say state = agent.encode_board(board) and then process state from there.
+# also keeps all the torch stuff out of mdp/games
+
+
 ## Try CNN and use 2d board state as input
 # so One Hot the board for p1, p2 posistion. Only need 2dim since 2 blanks == empty space. 
 # Q: would it help network learn if i redundantly give it 3 channels?

@@ -80,22 +80,22 @@ class DeepQNet3(nn.Module):
         for res_layer in range(10):
             x = getattr(self, "res%i" % res_layer)(x)
         x = self.out(x)
-
         return x
 
-    def encode_boards(self, board_list):
-            all_boards = []
-            for board in board_list:
-                encoded_board =  np.zeros((2,6,7))
-                for row in range(6):
-                    for col in range(7):
-                        if board[row, col] == 0: continue
-                        elif board[row, col] == 1: encoded_board[0, row, col] = 1
-                        else: encoded_board[1, row, col] = 1
-                encoded_board = torch.tensor(encoded_board, dtype=torch.float32)
-                all_boards.append(encoded_board)
+
+    # def encode_boards(self, board_list):
+    #         all_boards = []
+    #         for board in board_list:
+    #             encoded_board =  np.zeros((2,6,7))
+    #             for row in range(6):
+    #                 for col in range(7):
+    #                     if board[row, col] == 0: continue
+    #                     elif board[row, col] == 1: encoded_board[0, row, col] = 1
+    #                     else: encoded_board[1, row, col] = 1
+    #             encoded_board = torch.tensor(encoded_board, dtype=torch.float32)
+    #             all_boards.append(encoded_board)
             
-            return torch.stack(all_boards)
+    #         return torch.stack(all_boards)
 
     
 

@@ -10,7 +10,7 @@ def play_game(agent_1, agent_2, shuffle_order=True, verbose=False):
     Returns winning agents name or 'tie'.
     """
     p1_id = 1
-    p2_id = -1
+    p2_id = 2
 
     if shuffle_order: 
         turn = random.choice((p1_id, p2_id))

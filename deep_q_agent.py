@@ -1,4 +1,5 @@
 import copy
+import numpy as np
 import random
 import pickle
 
@@ -8,7 +9,7 @@ import torch.nn.functional as F
 
 
 from agent import Agent
-from deep_q_net import DeepQNet, DeepQNet2
+from deep_q_net import DeepQNet, DeepQNet2, DeepQNet3
 from logger import *
 from mdp import Connect4MDP
 from replay_buffer import ReplayBuffer
@@ -30,7 +31,7 @@ class DeepQAgent(Agent):
         self.action_space = [x for x in range(7)]
         self.replay_buffer = ReplayBuffer(capacity=mem_size)
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-        self.policy_net = DeepQNet().to(self.device)
+        self.policy_net = DeepQNet3().to(self.device)  # CHECK ARCHITECTURE
         self.target_net = copy.deepcopy(self.policy_net)
         self.learning_iters = 0
 
@@ -77,7 +78,6 @@ class DeepQAgent(Agent):
         ## ADJUSTING FOR CNN (WAS PREV JUST NP.FLATTEN(BOARD))
         # return board.flatten()
         "One-Hot the board for self, opponent. Return 2x6x7 array."
-        
         encoded_board = np.zeros((2,6,7))
         for row in range(6):
             for col in range(7):
@@ -86,6 +86,7 @@ class DeepQAgent(Agent):
                 else: encoded_board[1, row, col] = 1
         
         return encoded_board
+        # return torch.tensor(encoded_board, dtype=torch.float32)
 
     def save_memory_learning_iters(self, path):
         with open(path, 'wb') as f:
