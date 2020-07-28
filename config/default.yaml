@@ -10,7 +10,7 @@ n_episodes: 5
 Trainer:
   batch_size: 64
   target_freq: 500  # adjust this so its a trainer attr not agent
-  lr: .01 #.005
+  lr: .0001 #.005
   gamma: .95
   eps_max: 1.0
   eps_min: 0.1
