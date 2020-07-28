@@ -1,0 +1,181 @@
+2020-07-27 18:56:19,242 - __main__ - INFO - 
+
+----------   NEW LOG   ----------
+
+2020-07-27 18:56:19,243 - __main__ - INFO - config_file: config/initial_config.yaml
+2020-07-27 18:56:19,243 - __main__ - INFO - load_file: 
+2020-07-27 18:56:19,243 - __main__ - INFO - save_file: models/agent8/v0
+2020-07-27 18:56:19,243 - __main__ - INFO - config params: {'random_seed': 3, 'eval_best': True, 'eval_random': True, 'eval_episodes': 500, 'best_model': 'models/best_models/arch3', 'epochs': 25, 'iters': 10000, 'n_episodes': 5, 'Trainer': {'update_target_freq': 500, 'batch_size': 64, 'lr': 0.005, 'gamma': 0.99, 'eps_max': 1.0, 'eps_min': 0.1, 'eps_freq': 10000, 'eps_decrement': 0.01}}
+2020-07-27 18:56:19,290 - __main__ - INFO - Device: cuda
+2020-07-27 18:56:19,519 - __main__ - INFO - Building memory before learning
+2020-07-27 18:56:19,794 - __main__ - INFO - Building memory before learning
+2020-07-27 18:56:20,059 - __main__ - INFO - Building memory before learning
+2020-07-27 18:56:20,301 - __main__ - INFO - Building memory before learning
+2020-07-27 18:56:20,573 - __main__ - INFO - Building memory before learning
+2020-07-27 18:56:20,573 - __main__ - INFO - EPOCH 0
+2020-07-27 19:03:36,595 - __main__ - INFO - Performance vs best_model over 500 games: {'v0': 0.0, 'best': 1.0, 'tie': 0.0}
+2020-07-27 19:03:36,595 - __main__ - INFO - LOSS VS BEST_MODEL
+2020-07-27 19:03:48,984 - __main__ - INFO - Performance vs random agent over 500 games: {'v0': 0.836, 'random player': 0.164, 'tie': 0.0}
+2020-07-27 19:03:49,037 - __main__ - INFO - saved model state_dict at models/agent8/v0
+2020-07-27 19:03:49,129 - __main__ - INFO - saved memory and learning iters count at models/agent8/memory
+2020-07-27 19:03:49,130 - __main__ - INFO - EPOCH 1
+2020-07-27 19:11:45,681 - __main__ - INFO - Performance vs best_model over 500 games: {'v0': 0.0, 'best': 1.0, 'tie': 0.0}
+2020-07-27 19:11:45,681 - __main__ - INFO - LOSS VS BEST_MODEL
+2020-07-27 19:11:58,567 - __main__ - INFO - Performance vs random agent over 500 games: {'v0': 0.848, 'random player': 0.152, 'tie': 0.0}
+2020-07-27 19:11:58,622 - __main__ - INFO - saved model state_dict at models/agent8/v0
+2020-07-27 19:11:58,744 - __main__ - INFO - saved memory and learning iters count at models/agent8/memory
+2020-07-27 19:11:58,745 - __main__ - INFO - EPOCH 2
+2020-07-27 19:20:35,255 - __main__ - INFO - Performance vs best_model over 500 games: {'v0': 0.486, 'best': 0.514, 'tie': 0.0}
+2020-07-27 19:20:35,255 - __main__ - INFO - LOSS VS BEST_MODEL
+2020-07-27 19:20:48,495 - __main__ - INFO - Performance vs random agent over 500 games: {'v0': 0.85, 'random player': 0.15, 'tie': 0.0}
+2020-07-27 19:20:48,566 - __main__ - INFO - saved model state_dict at models/agent8/v0
+2020-07-27 19:20:48,661 - __main__ - INFO - saved memory and learning iters count at models/agent8/memory
+2020-07-27 19:20:48,663 - __main__ - INFO - EPOCH 3
+2020-07-27 19:30:10,996 - __main__ - INFO - Performance vs best_model over 500 games: {'v0': 0.486, 'best': 0.514, 'tie': 0.0}
+2020-07-27 19:30:10,997 - __main__ - INFO - LOSS VS BEST_MODEL
+2020-07-27 19:30:26,791 - __main__ - INFO - Performance vs random agent over 500 games: {'v0': 0.758, 'random player': 0.242, 'tie': 0.0}
+2020-07-27 19:30:26,848 - __main__ - INFO - saved model state_dict at models/agent8/v0
+2020-07-27 19:30:26,938 - __main__ - INFO - saved memory and learning iters count at models/agent8/memory
+2020-07-27 19:30:26,939 - __main__ - INFO - EPOCH 4
+2020-07-27 19:40:24,666 - __main__ - INFO - Performance vs best_model over 500 games: {'v0': 0.0, 'best': 1.0, 'tie': 0.0}
+2020-07-27 19:40:24,666 - __main__ - INFO - LOSS VS BEST_MODEL
+2020-07-27 19:40:40,905 - __main__ - INFO - Performance vs random agent over 500 games: {'v0': 0.77, 'random player': 0.228, 'tie': 0.002}
+2020-07-27 19:40:40,963 - __main__ - INFO - saved model state_dict at models/agent8/v0
+2020-07-27 19:40:41,080 - __main__ - INFO - saved memory and learning iters count at models/agent8/memory
+2020-07-27 19:40:41,081 - __main__ - INFO - EPOCH 5
+2020-07-27 19:51:18,643 - __main__ - INFO - Performance vs best_model over 500 games: {'v0': 0.0, 'best': 1.0, 'tie': 0.0}
+2020-07-27 19:51:18,643 - __main__ - INFO - LOSS VS BEST_MODEL
+2020-07-27 19:51:32,957 - __main__ - INFO - Performance vs random agent over 500 games: {'v0': 0.738, 'random player': 0.262, 'tie': 0.0}
+2020-07-27 19:51:33,014 - __main__ - INFO - saved model state_dict at models/agent8/v0
+2020-07-27 19:51:33,104 - __main__ - INFO - saved memory and learning iters count at models/agent8/memory
+2020-07-27 19:51:33,106 - __main__ - INFO - EPOCH 6
+2020-07-27 20:02:55,714 - __main__ - INFO - Performance vs best_model over 500 games: {'v0': 0.0, 'best': 1.0, 'tie': 0.0}
+2020-07-27 20:02:55,715 - __main__ - INFO - LOSS VS BEST_MODEL
+2020-07-27 20:03:11,584 - __main__ - INFO - Performance vs random agent over 500 games: {'v0': 0.65, 'random player': 0.35, 'tie': 0.0}
+2020-07-27 20:03:11,637 - __main__ - INFO - saved model state_dict at models/agent8/v0
+2020-07-27 20:03:11,724 - __main__ - INFO - saved memory and learning iters count at models/agent8/memory
+2020-07-27 20:03:11,726 - __main__ - INFO - EPOCH 7
+2020-07-27 20:15:03,964 - __main__ - INFO - Performance vs best_model over 500 games: {'v0': 0.486, 'best': 0.514, 'tie': 0.0}
+2020-07-27 20:15:03,965 - __main__ - INFO - LOSS VS BEST_MODEL
+2020-07-27 20:15:18,351 - __main__ - INFO - Performance vs random agent over 500 games: {'v0': 0.746, 'random player': 0.254, 'tie': 0.0}
+2020-07-27 20:15:18,406 - __main__ - INFO - saved model state_dict at models/agent8/v0
+2020-07-27 20:15:18,514 - __main__ - INFO - saved memory and learning iters count at models/agent8/memory
+2020-07-27 20:15:18,515 - __main__ - INFO - EPOCH 8
+2020-07-27 20:27:53,037 - __main__ - INFO - Performance vs best_model over 500 games: {'v0': 0.0, 'best': 1.0, 'tie': 0.0}
+2020-07-27 20:27:53,038 - __main__ - INFO - LOSS VS BEST_MODEL
+2020-07-27 20:28:07,187 - __main__ - INFO - Performance vs random agent over 500 games: {'v0': 0.644, 'random player': 0.356, 'tie': 0.0}
+2020-07-27 20:28:07,243 - __main__ - INFO - saved model state_dict at models/agent8/v0
+2020-07-27 20:28:07,332 - __main__ - INFO - saved memory and learning iters count at models/agent8/memory
+2020-07-27 20:28:07,334 - __main__ - INFO - EPOCH 9
+2020-07-27 20:41:16,278 - __main__ - INFO - Performance vs best_model over 500 games: {'v0': 0.0, 'best': 1.0, 'tie': 0.0}
+2020-07-27 20:41:16,278 - __main__ - INFO - LOSS VS BEST_MODEL
+2020-07-27 20:41:33,798 - __main__ - INFO - Performance vs random agent over 500 games: {'v0': 0.59, 'random player': 0.41, 'tie': 0.0}
+2020-07-27 20:41:33,864 - __main__ - INFO - saved model state_dict at models/agent8/v0
+2020-07-27 20:41:33,954 - __main__ - INFO - saved memory and learning iters count at models/agent8/memory
+2020-07-27 20:41:33,955 - __main__ - INFO - EPOCH 10
+2020-07-27 20:55:27,421 - __main__ - INFO - Performance vs best_model over 500 games: {'v0': 0.0, 'best': 1.0, 'tie': 0.0}
+2020-07-27 20:55:27,421 - __main__ - INFO - LOSS VS BEST_MODEL
+2020-07-27 20:55:44,817 - __main__ - INFO - Performance vs random agent over 500 games: {'v0': 0.62, 'random player': 0.38, 'tie': 0.0}
+2020-07-27 20:55:44,873 - __main__ - INFO - saved model state_dict at models/agent8/v0
+2020-07-27 20:55:44,991 - __main__ - INFO - saved memory and learning iters count at models/agent8/memory
+2020-07-27 20:55:44,992 - __main__ - INFO - EPOCH 11
+2020-07-27 21:10:40,163 - __main__ - INFO - Performance vs best_model over 500 games: {'v0': 0.51, 'best': 0.49, 'tie': 0.0}
+2020-07-27 21:10:40,164 - __main__ - INFO - WON VS BEST_MODEL. Overwriting best_model
+2020-07-27 21:10:58,580 - __main__ - INFO - Performance vs random agent over 500 games: {'v0': 0.506, 'random player': 0.494, 'tie': 0.0}
+2020-07-27 21:10:58,635 - __main__ - INFO - saved model state_dict at models/agent8/v0
+2020-07-27 21:10:58,727 - __main__ - INFO - saved memory and learning iters count at models/agent8/memory
+2020-07-27 21:10:58,730 - __main__ - INFO - EPOCH 12
+2020-07-27 21:26:10,101 - __main__ - INFO - Performance vs best_model over 500 games: {'v0': 0.544, 'best': 0.456, 'tie': 0.0}
+2020-07-27 21:26:10,101 - __main__ - INFO - WON VS BEST_MODEL. Overwriting best_model
+2020-07-27 21:26:24,756 - __main__ - INFO - Performance vs random agent over 500 games: {'v0': 0.702, 'random player': 0.298, 'tie': 0.0}
+2020-07-27 21:26:24,812 - __main__ - INFO - saved model state_dict at models/agent8/v0
+2020-07-27 21:26:24,904 - __main__ - INFO - saved memory and learning iters count at models/agent8/memory
+2020-07-27 21:26:24,906 - __main__ - INFO - EPOCH 13
+2020-07-27 21:42:10,404 - __main__ - INFO - Performance vs best_model over 500 games: {'v0': 0.0, 'best': 1.0, 'tie': 0.0}
+2020-07-27 21:42:10,404 - __main__ - INFO - LOSS VS BEST_MODEL
+2020-07-27 21:42:24,050 - __main__ - INFO - Performance vs random agent over 500 games: {'v0': 0.684, 'random player': 0.316, 'tie': 0.0}
+2020-07-27 21:42:24,115 - __main__ - INFO - saved model state_dict at models/agent8/v0
+2020-07-27 21:42:24,225 - __main__ - INFO - saved memory and learning iters count at models/agent8/memory
+2020-07-27 21:42:24,226 - __main__ - INFO - EPOCH 14
+2020-07-27 21:58:52,803 - __main__ - INFO - Performance vs best_model over 500 games: {'v0': 1.0, 'best': 0.0, 'tie': 0.0}
+2020-07-27 21:58:52,803 - __main__ - INFO - WON VS BEST_MODEL. Overwriting best_model
+2020-07-27 21:59:05,559 - __main__ - INFO - Performance vs random agent over 500 games: {'v0': 0.728, 'random player': 0.272, 'tie': 0.0}
+2020-07-27 21:59:05,614 - __main__ - INFO - saved model state_dict at models/agent8/v0
+2020-07-27 21:59:05,708 - __main__ - INFO - saved memory and learning iters count at models/agent8/memory
+2020-07-27 21:59:05,708 - __main__ - INFO - EPOCH 15
+2020-07-27 22:16:13,194 - __main__ - INFO - Performance vs best_model over 500 games: {'v0': 0.486, 'best': 0.514, 'tie': 0.0}
+2020-07-27 22:16:13,195 - __main__ - INFO - LOSS VS BEST_MODEL
+2020-07-27 22:16:24,740 - __main__ - INFO - Performance vs random agent over 500 games: {'v0': 0.772, 'random player': 0.228, 'tie': 0.0}
+2020-07-27 22:16:24,797 - __main__ - INFO - saved model state_dict at models/agent8/v0
+2020-07-27 22:16:24,888 - __main__ - INFO - saved memory and learning iters count at models/agent8/memory
+2020-07-27 22:16:24,889 - __main__ - INFO - EPOCH 16
+2020-07-27 22:34:37,935 - __main__ - INFO - Performance vs best_model over 500 games: {'v0': 0.506, 'best': 0.494, 'tie': 0.0}
+2020-07-27 22:34:37,936 - __main__ - INFO - WON VS BEST_MODEL. Overwriting best_model
+2020-07-27 22:34:49,248 - __main__ - INFO - Performance vs random agent over 500 games: {'v0': 0.76, 'random player': 0.24, 'tie': 0.0}
+2020-07-27 22:34:49,303 - __main__ - INFO - saved model state_dict at models/agent8/v0
+2020-07-27 22:34:49,416 - __main__ - INFO - saved memory and learning iters count at models/agent8/memory
+2020-07-27 22:34:49,417 - __main__ - INFO - EPOCH 17
+2020-07-27 22:53:57,594 - __main__ - INFO - Performance vs best_model over 500 games: {'v0': 1.0, 'best': 0.0, 'tie': 0.0}
+2020-07-27 22:53:57,594 - __main__ - INFO - WON VS BEST_MODEL. Overwriting best_model
+2020-07-27 22:54:09,855 - __main__ - INFO - Performance vs random agent over 500 games: {'v0': 0.728, 'random player': 0.272, 'tie': 0.0}
+2020-07-27 22:54:09,910 - __main__ - INFO - saved model state_dict at models/agent8/v0
+2020-07-27 22:54:10,003 - __main__ - INFO - saved memory and learning iters count at models/agent8/memory
+2020-07-27 22:54:10,004 - __main__ - INFO - EPOCH 18
+2020-07-27 23:13:36,183 - __main__ - INFO - Performance vs best_model over 500 games: {'v0': 0.47, 'best': 0.53, 'tie': 0.0}
+2020-07-27 23:13:36,184 - __main__ - INFO - LOSS VS BEST_MODEL
+2020-07-27 23:13:49,994 - __main__ - INFO - Performance vs random agent over 500 games: {'v0': 0.694, 'random player': 0.306, 'tie': 0.0}
+2020-07-27 23:13:50,056 - __main__ - INFO - saved model state_dict at models/agent8/v0
+2020-07-27 23:13:50,167 - __main__ - INFO - saved memory and learning iters count at models/agent8/memory
+2020-07-27 23:13:50,169 - __main__ - INFO - EPOCH 19
+2020-07-27 23:33:40,170 - __main__ - INFO - Performance vs best_model over 500 games: {'v0': 1.0, 'best': 0.0, 'tie': 0.0}
+2020-07-27 23:33:40,170 - __main__ - INFO - WON VS BEST_MODEL. Overwriting best_model
+2020-07-27 23:33:55,058 - __main__ - INFO - Performance vs random agent over 500 games: {'v0': 0.736, 'random player': 0.264, 'tie': 0.0}
+2020-07-27 23:33:55,113 - __main__ - INFO - saved model state_dict at models/agent8/v0
+2020-07-27 23:33:55,235 - __main__ - INFO - saved memory and learning iters count at models/agent8/memory
+2020-07-27 23:33:55,236 - __main__ - INFO - EPOCH 20
+2020-07-27 23:54:47,392 - __main__ - INFO - Performance vs best_model over 500 games: {'v0': 0.49, 'best': 0.51, 'tie': 0.0}
+2020-07-27 23:54:47,392 - __main__ - INFO - LOSS VS BEST_MODEL
+2020-07-27 23:54:59,673 - __main__ - INFO - Performance vs random agent over 500 games: {'v0': 0.716, 'random player': 0.284, 'tie': 0.0}
+2020-07-27 23:54:59,729 - __main__ - INFO - saved model state_dict at models/agent8/v0
+2020-07-27 23:54:59,819 - __main__ - INFO - saved memory and learning iters count at models/agent8/memory
+2020-07-27 23:54:59,820 - __main__ - INFO - EPOCH 21
+2020-07-28 00:16:38,189 - __main__ - INFO - Performance vs best_model over 500 games: {'v0': 0.0, 'best': 1.0, 'tie': 0.0}
+2020-07-28 00:16:38,189 - __main__ - INFO - LOSS VS BEST_MODEL
+2020-07-28 00:16:48,798 - __main__ - INFO - Performance vs random agent over 500 games: {'v0': 0.814, 'random player': 0.186, 'tie': 0.0}
+2020-07-28 00:16:48,854 - __main__ - INFO - saved model state_dict at models/agent8/v0
+2020-07-28 00:16:48,972 - __main__ - INFO - saved memory and learning iters count at models/agent8/memory
+2020-07-28 00:16:48,976 - __main__ - INFO - EPOCH 22
+2020-07-28 00:38:59,236 - __main__ - INFO - Performance vs best_model over 500 games: {'v0': 0.0, 'best': 1.0, 'tie': 0.0}
+2020-07-28 00:38:59,236 - __main__ - INFO - LOSS VS BEST_MODEL
+2020-07-28 00:39:11,043 - __main__ - INFO - Performance vs random agent over 500 games: {'v0': 0.766, 'random player': 0.234, 'tie': 0.0}
+2020-07-28 00:39:11,097 - __main__ - INFO - saved model state_dict at models/agent8/v0
+2020-07-28 00:39:11,207 - __main__ - INFO - saved memory and learning iters count at models/agent8/memory
+2020-07-28 00:39:11,208 - __main__ - INFO - EPOCH 23
+2020-07-28 01:02:06,300 - __main__ - INFO - Performance vs best_model over 500 games: {'v0': 0.48, 'best': 0.52, 'tie': 0.0}
+2020-07-28 01:02:06,301 - __main__ - INFO - LOSS VS BEST_MODEL
+2020-07-28 01:02:18,622 - __main__ - INFO - Performance vs random agent over 500 games: {'v0': 0.686, 'random player': 0.314, 'tie': 0.0}
+2020-07-28 01:02:18,677 - __main__ - INFO - saved model state_dict at models/agent8/v0
+2020-07-28 01:02:18,767 - __main__ - INFO - saved memory and learning iters count at models/agent8/memory
+2020-07-28 01:02:18,768 - __main__ - INFO - EPOCH 24
+2020-07-28 01:25:58,566 - __main__ - INFO - Performance vs best_model over 500 games: {'v0': 1.0, 'best': 0.0, 'tie': 0.0}
+2020-07-28 01:25:58,566 - __main__ - INFO - WON VS BEST_MODEL. Overwriting best_model
+2020-07-28 01:26:10,219 - __main__ - INFO - Performance vs random agent over 500 games: {'v0': 0.716, 'random player': 0.284, 'tie': 0.0}
+2020-07-28 01:26:10,274 - __main__ - INFO - saved model state_dict at models/agent8/v0
+2020-07-28 01:26:10,385 - __main__ - INFO - saved memory and learning iters count at models/agent8/memory
+2020-07-28 01:26:10,386 - __main__ - INFO - Total agent learning iters: 250000
+2020-07-28 01:26:10,387 - __main__ - INFO - DONE
+2020-07-28 01:26:24,418 - __main__ - INFO - 
+
+----------   NEW LOG   ----------
+
+2020-07-28 01:26:24,418 - __main__ - INFO - config_file: config/initial_config.yaml
+2020-07-28 01:26:24,419 - __main__ - INFO - load_file: 
+2020-07-28 01:26:24,419 - __main__ - INFO - save_file: models/agent8/v0
+2020-07-28 01:26:24,419 - __main__ - INFO - config params: {'random_seed': 3, 'eval_best': True, 'eval_random': True, 'eval_episodes': 500, 'best_model': 'models/best_models/arch3', 'epochs': 25, 'iters': 10000, 'n_episodes': 5, 'Trainer': {'update_target_freq': 500, 'batch_size': 64, 'lr': 0.005, 'gamma': 0.99, 'eps_max': 1.0, 'eps_min': 0.1, 'eps_freq': 10000, 'eps_decrement': 0.01}}
+2020-07-28 01:26:24,457 - __main__ - INFO - Device: cuda
+2020-07-28 01:26:24,680 - __main__ - INFO - Building memory before learning
+2020-07-28 01:26:24,920 - __main__ - INFO - Building memory before learning
+2020-07-28 01:26:25,178 - __main__ - INFO - Building memory before learning
+2020-07-28 01:26:25,403 - __main__ - INFO - Building memory before learning
+2020-07-28 01:26:25,652 - __main__ - INFO - Building memory before learning
+2020-07-28 01:26:25,652 - __main__ - INFO - EPOCH 0

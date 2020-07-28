@@ -17,11 +17,12 @@ class Trainer:
     Guides agent through self play to build data for training and then learns
     from random samples drawn from agent's replay_buffer.
     """
-    def __init__(self, agent=DeepQAgent(), target_update_freq=500, lr=.005, gamma=.99, batch_size=64, eps_max=1, eps_min=.1, eps_freq=10000, eps_decrement=.01, *args, **kwargs):
+    def __init__(self, agent=DeepQAgent(), target_update_freq=100, lr=.005, lr_gamma=.9, lr_step_size=5, gamma=.95, batch_size=64, eps_max=1, eps_min=.1, eps_freq=1000, eps_decrement=.01, *args, **kwargs):
         self.mdp = Connect4MDP()
         self.agent = agent
         self.target_update_freq = target_update_freq
         self.optimizer = torch.optim.Adam(params=agent.policy_net.parameters(), lr=lr)
+        self.scheduler = torch.optim.lr_scheduler.StepLR(self.optimizer, step_size=lr_step_size, gamma=lr_gamma, last_epoch=-1)
         self.loss_fn = nn.MSELoss()
         self.lr = lr
         self.gamma = gamma
