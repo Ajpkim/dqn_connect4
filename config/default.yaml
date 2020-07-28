@@ -2,7 +2,7 @@ random_seed: 33
 eval_best: True
 eval_random: True
 eval_episodes: 500
-best_model: models/best_models/arch0
+best_model: models/best_models/arch3
 epochs: 10
 iters: 10000
 n_episodes: 5
