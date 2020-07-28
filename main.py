@@ -105,6 +105,7 @@ for epoch in range(config['epochs']):
     logger.info(f'EPOCH {epoch}')
     print(f'EPOCH {epoch}')  # for when training on colab
     trainer.train(iters=config['iters'], n_episodes=config['n_episodes'])
+    trainer.scheduler.step()
     
     ## EVALUATION PHASE
     if config['eval_best']:
