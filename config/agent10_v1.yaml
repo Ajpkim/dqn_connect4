@@ -1,0 +1,27 @@
+# Have already trained for 48 epochs at 2500 iters each --> 120_000 learning steps
+# v0 end lr was: .005 * .9**(48/5) = .00181844
+# will set lr at .00181844 and continue on for 27 more epochs.
+# v1 final lr will by 0.001029
+# eps is already down to .1 (as of 90_000 learning iters)
+
+
+random_seed: 3
+eval_best: False
+eval_random: False
+eval_episodes: 500
+best_model: models/best_models/arch3
+epochs: 27  # v0 completed 48 epochs with 2500 iters each
+iters: 2500  # minibatches per epoch
+n_episodes: 5
+
+Trainer:
+  update_target_freq: 100
+  batch_size: 64
+  lr: .00181844  
+  lr_gamma: .9
+  lr_step_size: 5 
+  gamma: .95
+  eps_max: 1.0
+  eps_min: 0.1
+  eps_freq: 1000
+  eps_decrement: .01

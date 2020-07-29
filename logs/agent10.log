@@ -1,0 +1,265 @@
+2020-07-28 03:31:19,184 - __main__ - INFO - 
+
+----------   NEW LOG   ----------
+
+2020-07-28 03:31:19,184 - __main__ - INFO - config_file: config/initial_config.yaml
+2020-07-28 03:31:19,185 - __main__ - INFO - load_file: 
+2020-07-28 03:31:19,185 - __main__ - INFO - save_file: models/agent10/v0
+2020-07-28 03:31:19,185 - __main__ - INFO - config params: {'random_seed': 3, 'eval_best': False, 'eval_random': False, 'eval_episodes': 500, 'best_model': 'models/best_models/arch3', 'epochs': 100, 'iters': 2500, 'n_episodes': 5, 'Trainer': {'update_target_freq': 100, 'batch_size': 64, 'lr': 0.005, 'lr_gamma': 0.9, 'lr_step_size': 5, 'gamma': 0.95, 'eps_max': 1.0, 'eps_min': 0.1, 'eps_freq': 1000, 'eps_decrement': 0.01}}
+2020-07-28 03:31:19,226 - __main__ - INFO - Device: cuda
+2020-07-28 03:31:19,441 - __main__ - INFO - Building memory before learning
+2020-07-28 03:31:19,687 - __main__ - INFO - Building memory before learning
+2020-07-28 03:31:19,927 - __main__ - INFO - Building memory before learning
+2020-07-28 03:31:20,139 - __main__ - INFO - Building memory before learning
+2020-07-28 03:31:20,381 - __main__ - INFO - Building memory before learning
+2020-07-28 03:31:20,381 - __main__ - INFO - EPOCH 0
+2020-07-28 03:33:03,397 - __main__ - INFO - saved model state_dict at models/agent10/v0
+2020-07-28 03:33:03,493 - __main__ - INFO - saved memory and learning iters count at models/agent10/memory
+2020-07-28 03:33:03,496 - __main__ - INFO - EPOCH 1
+2020-07-28 03:35:11,387 - __main__ - INFO - saved model state_dict at models/agent10/v0
+2020-07-28 03:35:11,748 - __main__ - INFO - saved memory and learning iters count at models/agent10/memory
+2020-07-28 03:35:11,749 - __main__ - INFO - EPOCH 2
+2020-07-28 03:37:43,296 - __main__ - INFO - saved model state_dict at models/agent10/v0
+2020-07-28 03:37:43,387 - __main__ - INFO - saved memory and learning iters count at models/agent10/memory
+2020-07-28 03:37:43,389 - __main__ - INFO - EPOCH 3
+2020-07-28 03:40:38,365 - __main__ - INFO - saved model state_dict at models/agent10/v0
+2020-07-28 03:40:38,457 - __main__ - INFO - saved memory and learning iters count at models/agent10/memory
+2020-07-28 03:40:38,458 - __main__ - INFO - EPOCH 4
+2020-07-28 03:43:56,503 - __main__ - INFO - saved model state_dict at models/agent10/v0
+2020-07-28 03:43:56,622 - __main__ - INFO - saved memory and learning iters count at models/agent10/memory
+2020-07-28 03:43:56,623 - __main__ - INFO - EPOCH 5
+2020-07-28 03:47:33,897 - __main__ - INFO - saved model state_dict at models/agent10/v0
+2020-07-28 03:47:33,988 - __main__ - INFO - saved memory and learning iters count at models/agent10/memory
+2020-07-28 03:47:33,989 - __main__ - INFO - EPOCH 6
+2020-07-28 03:51:36,677 - __main__ - INFO - saved model state_dict at models/agent10/v0
+2020-07-28 03:51:36,771 - __main__ - INFO - saved memory and learning iters count at models/agent10/memory
+2020-07-28 03:51:36,772 - __main__ - INFO - EPOCH 7
+2020-07-28 03:55:59,077 - __main__ - INFO - saved model state_dict at models/agent10/v0
+2020-07-28 03:55:59,196 - __main__ - INFO - saved memory and learning iters count at models/agent10/memory
+2020-07-28 03:55:59,199 - __main__ - INFO - EPOCH 8
+2020-07-28 04:00:40,172 - __main__ - INFO - saved model state_dict at models/agent10/v0
+2020-07-28 04:00:40,266 - __main__ - INFO - saved memory and learning iters count at models/agent10/memory
+2020-07-28 04:00:40,268 - __main__ - INFO - EPOCH 9
+2020-07-28 04:05:46,038 - __main__ - INFO - saved model state_dict at models/agent10/v0
+2020-07-28 04:05:46,139 - __main__ - INFO - saved memory and learning iters count at models/agent10/memory
+2020-07-28 04:05:46,140 - __main__ - INFO - EPOCH 10
+2020-07-28 04:11:09,903 - __main__ - INFO - saved model state_dict at models/agent10/v0
+2020-07-28 04:11:10,014 - __main__ - INFO - saved memory and learning iters count at models/agent10/memory
+2020-07-28 04:11:10,015 - __main__ - INFO - EPOCH 11
+2020-07-28 04:16:55,039 - __main__ - INFO - saved model state_dict at models/agent10/v0
+2020-07-28 04:16:55,149 - __main__ - INFO - saved memory and learning iters count at models/agent10/memory
+2020-07-28 04:16:55,150 - __main__ - INFO - EPOCH 12
+2020-07-28 04:22:57,315 - __main__ - INFO - saved model state_dict at models/agent10/v0
+2020-07-28 04:22:57,408 - __main__ - INFO - saved memory and learning iters count at models/agent10/memory
+2020-07-28 04:22:57,409 - __main__ - INFO - EPOCH 13
+2020-07-28 04:29:30,756 - __main__ - INFO - saved model state_dict at models/agent10/v0
+2020-07-28 04:29:30,869 - __main__ - INFO - saved memory and learning iters count at models/agent10/memory
+2020-07-28 04:29:30,871 - __main__ - INFO - EPOCH 14
+2020-07-28 04:36:29,065 - __main__ - INFO - saved model state_dict at models/agent10/v0
+2020-07-28 04:36:29,173 - __main__ - INFO - saved memory and learning iters count at models/agent10/memory
+2020-07-28 04:36:29,175 - __main__ - INFO - EPOCH 15
+2020-07-28 04:43:50,536 - __main__ - INFO - saved model state_dict at models/agent10/v0
+2020-07-28 04:43:50,636 - __main__ - INFO - saved memory and learning iters count at models/agent10/memory
+2020-07-28 04:43:50,638 - __main__ - INFO - EPOCH 16
+2020-07-28 04:51:57,130 - __main__ - INFO - saved model state_dict at models/agent10/v0
+2020-07-28 04:51:57,480 - __main__ - INFO - saved memory and learning iters count at models/agent10/memory
+2020-07-28 04:51:57,481 - __main__ - INFO - EPOCH 17
+2020-07-28 05:00:07,218 - __main__ - INFO - saved model state_dict at models/agent10/v0
+2020-07-28 05:00:07,311 - __main__ - INFO - saved memory and learning iters count at models/agent10/memory
+2020-07-28 05:00:07,311 - __main__ - INFO - EPOCH 18
+2020-07-28 05:09:01,176 - __main__ - INFO - saved model state_dict at models/agent10/v0
+2020-07-28 05:09:01,276 - __main__ - INFO - saved memory and learning iters count at models/agent10/memory
+2020-07-28 05:09:01,277 - __main__ - INFO - EPOCH 19
+2020-07-28 05:18:20,062 - __main__ - INFO - saved model state_dict at models/agent10/v0
+2020-07-28 05:18:20,176 - __main__ - INFO - saved memory and learning iters count at models/agent10/memory
+2020-07-28 05:18:20,178 - __main__ - INFO - EPOCH 20
+2020-07-28 05:28:14,763 - __main__ - INFO - saved model state_dict at models/agent10/v0
+2020-07-28 05:28:14,877 - __main__ - INFO - saved memory and learning iters count at models/agent10/memory
+2020-07-28 05:28:14,879 - __main__ - INFO - EPOCH 21
+2020-07-28 05:38:54,748 - __main__ - INFO - saved model state_dict at models/agent10/v0
+2020-07-28 05:38:54,838 - __main__ - INFO - saved memory and learning iters count at models/agent10/memory
+2020-07-28 05:38:54,839 - __main__ - INFO - EPOCH 22
+2020-07-28 05:50:08,912 - __main__ - INFO - saved model state_dict at models/agent10/v0
+2020-07-28 05:50:09,031 - __main__ - INFO - saved memory and learning iters count at models/agent10/memory
+2020-07-28 05:50:09,031 - __main__ - INFO - EPOCH 23
+2020-07-28 06:01:54,522 - __main__ - INFO - saved model state_dict at models/agent10/v0
+2020-07-28 06:01:54,613 - __main__ - INFO - saved memory and learning iters count at models/agent10/memory
+2020-07-28 06:01:54,615 - __main__ - INFO - EPOCH 24
+2020-07-28 06:14:03,019 - __main__ - INFO - saved model state_dict at models/agent10/v0
+2020-07-28 06:14:03,116 - __main__ - INFO - saved memory and learning iters count at models/agent10/memory
+2020-07-28 06:14:03,117 - __main__ - INFO - EPOCH 25
+2020-07-28 06:27:09,943 - __main__ - INFO - saved model state_dict at models/agent10/v0
+2020-07-28 06:27:10,064 - __main__ - INFO - saved memory and learning iters count at models/agent10/memory
+2020-07-28 06:27:10,065 - __main__ - INFO - EPOCH 26
+2020-07-28 06:41:07,717 - __main__ - INFO - saved model state_dict at models/agent10/v0
+2020-07-28 06:41:07,832 - __main__ - INFO - saved memory and learning iters count at models/agent10/memory
+2020-07-28 06:41:07,833 - __main__ - INFO - EPOCH 27
+2020-07-28 06:55:16,958 - __main__ - INFO - saved model state_dict at models/agent10/v0
+2020-07-28 06:55:17,057 - __main__ - INFO - saved memory and learning iters count at models/agent10/memory
+2020-07-28 06:55:17,059 - __main__ - INFO - EPOCH 28
+2020-07-28 07:10:11,841 - __main__ - INFO - saved model state_dict at models/agent10/v0
+2020-07-28 07:10:11,978 - __main__ - INFO - saved memory and learning iters count at models/agent10/memory
+2020-07-28 07:10:11,980 - __main__ - INFO - EPOCH 29
+2020-07-28 07:26:46,661 - __main__ - INFO - saved model state_dict at models/agent10/v0
+2020-07-28 07:26:46,762 - __main__ - INFO - saved memory and learning iters count at models/agent10/memory
+2020-07-28 07:26:46,764 - __main__ - INFO - EPOCH 30
+2020-07-28 07:43:51,343 - __main__ - INFO - saved model state_dict at models/agent10/v0
+2020-07-28 07:43:51,438 - __main__ - INFO - saved memory and learning iters count at models/agent10/memory
+2020-07-28 07:43:51,440 - __main__ - INFO - EPOCH 31
+2020-07-28 08:01:31,090 - __main__ - INFO - saved model state_dict at models/agent10/v0
+2020-07-28 08:01:31,568 - __main__ - INFO - saved memory and learning iters count at models/agent10/memory
+2020-07-28 08:01:31,571 - __main__ - INFO - EPOCH 32
+2020-07-28 08:19:42,598 - __main__ - INFO - saved model state_dict at models/agent10/v0
+2020-07-28 08:19:42,722 - __main__ - INFO - saved memory and learning iters count at models/agent10/memory
+2020-07-28 08:19:42,723 - __main__ - INFO - EPOCH 33
+2020-07-28 08:38:24,038 - __main__ - INFO - saved model state_dict at models/agent10/v0
+2020-07-28 08:38:24,136 - __main__ - INFO - saved memory and learning iters count at models/agent10/memory
+2020-07-28 08:38:24,137 - __main__ - INFO - EPOCH 34
+2020-07-28 08:56:47,662 - __main__ - INFO - saved model state_dict at models/agent10/v0
+2020-07-28 08:56:47,779 - __main__ - INFO - saved memory and learning iters count at models/agent10/memory
+2020-07-28 08:56:47,782 - __main__ - INFO - EPOCH 35
+2020-07-28 09:16:09,740 - __main__ - INFO - saved model state_dict at models/agent10/v0
+2020-07-28 09:16:09,853 - __main__ - INFO - saved memory and learning iters count at models/agent10/memory
+2020-07-28 09:16:09,854 - __main__ - INFO - EPOCH 36
+2020-07-28 09:35:22,976 - __main__ - INFO - saved model state_dict at models/agent10/v0
+2020-07-28 09:35:23,081 - __main__ - INFO - saved memory and learning iters count at models/agent10/memory
+2020-07-28 09:35:23,083 - __main__ - INFO - EPOCH 37
+2020-07-28 09:55:16,888 - __main__ - INFO - saved model state_dict at models/agent10/v0
+2020-07-28 09:55:17,007 - __main__ - INFO - saved memory and learning iters count at models/agent10/memory
+2020-07-28 09:55:17,009 - __main__ - INFO - EPOCH 38
+2020-07-28 10:16:03,824 - __main__ - INFO - saved model state_dict at models/agent10/v0
+2020-07-28 10:16:03,922 - __main__ - INFO - saved memory and learning iters count at models/agent10/memory
+2020-07-28 10:16:03,923 - __main__ - INFO - EPOCH 39
+2020-07-28 10:36:52,871 - __main__ - INFO - saved model state_dict at models/agent10/v0
+2020-07-28 10:36:52,973 - __main__ - INFO - saved memory and learning iters count at models/agent10/memory
+2020-07-28 10:36:52,975 - __main__ - INFO - EPOCH 40
+2020-07-28 10:56:45,224 - __main__ - INFO - saved model state_dict at models/agent10/v0
+2020-07-28 10:56:45,343 - __main__ - INFO - saved memory and learning iters count at models/agent10/memory
+2020-07-28 10:56:45,344 - __main__ - INFO - EPOCH 41
+2020-07-28 11:16:20,490 - __main__ - INFO - saved model state_dict at models/agent10/v0
+2020-07-28 11:16:20,598 - __main__ - INFO - saved memory and learning iters count at models/agent10/memory
+2020-07-28 11:16:20,600 - __main__ - INFO - EPOCH 42
+2020-07-28 11:37:52,609 - __main__ - INFO - saved model state_dict at models/agent10/v0
+2020-07-28 11:37:52,704 - __main__ - INFO - saved memory and learning iters count at models/agent10/memory
+2020-07-28 11:37:52,706 - __main__ - INFO - EPOCH 43
+2020-07-28 11:58:54,800 - __main__ - INFO - saved model state_dict at models/agent10/v0
+2020-07-28 11:58:54,918 - __main__ - INFO - saved memory and learning iters count at models/agent10/memory
+2020-07-28 11:58:54,920 - __main__ - INFO - EPOCH 44
+2020-07-28 12:18:47,722 - __main__ - INFO - saved model state_dict at models/agent10/v0
+2020-07-28 12:18:47,810 - __main__ - INFO - saved memory and learning iters count at models/agent10/memory
+2020-07-28 12:18:47,811 - __main__ - INFO - EPOCH 45
+2020-07-28 12:38:27,135 - __main__ - INFO - saved model state_dict at models/agent10/v0
+2020-07-28 12:38:27,229 - __main__ - INFO - saved memory and learning iters count at models/agent10/memory
+2020-07-28 12:38:27,230 - __main__ - INFO - EPOCH 46
+2020-07-28 12:58:03,500 - __main__ - INFO - saved model state_dict at models/agent10/v0
+2020-07-28 12:58:03,626 - __main__ - INFO - saved memory and learning iters count at models/agent10/memory
+2020-07-28 12:58:03,628 - __main__ - INFO - EPOCH 47
+2020-07-28 13:17:59,493 - __main__ - INFO - saved model state_dict at models/agent10/v0
+2020-07-28 13:17:59,616 - __main__ - INFO - saved memory and learning iters count at models/agent10/memory
+2020-07-28 13:17:59,618 - __main__ - INFO - EPOCH 48
+2020-07-28 15:24:43,202 - __main__ - INFO - 
+
+----------   NEW LOG   ----------
+
+2020-07-28 15:24:43,582 - __main__ - INFO - config_file: config/agent10_v1.yaml
+2020-07-28 15:24:43,582 - __main__ - INFO - load_file: models/agent10/v0
+2020-07-28 15:24:43,583 - __main__ - INFO - save_file: models/agent10/v1
+2020-07-28 15:24:43,583 - __main__ - INFO - config params: {'random_seed': 3, 'eval_best': False, 'eval_random': False, 'eval_episodes': 500, 'best_model': 'models/best_models/arch3', 'epochs': 27, 'iters': 2500, 'n_episodes': 5, 'Trainer': {'update_target_freq': 100, 'batch_size': 64, 'lr': 0.00181844, 'lr_gamma': 0.9, 'lr_step_size': 5, 'gamma': 0.95, 'eps_max': 1.0, 'eps_min': 0.1, 'eps_freq': 1000, 'eps_decrement': 0.01}}
+2020-07-28 15:24:43,622 - __main__ - INFO - Device: cuda
+2020-07-28 15:24:44,618 - __main__ - INFO - loaded model
+2020-07-28 15:24:45,174 - __main__ - INFO - loaded memory and learning iters count
+2020-07-28 15:24:45,174 - __main__ - INFO - EPOCH 0
+2020-07-28 15:39:13,176 - __main__ - INFO - 
+
+----------   NEW LOG   ----------
+
+2020-07-28 15:39:13,362 - __main__ - INFO - config_file: config/agent10_v1.yaml
+2020-07-28 15:39:13,362 - __main__ - INFO - load_file: models/agent10/v0
+2020-07-28 15:39:13,363 - __main__ - INFO - save_file: models/agent10/v1
+2020-07-28 15:39:13,363 - __main__ - INFO - config params: {'random_seed': 3, 'eval_best': False, 'eval_random': False, 'eval_episodes': 500, 'best_model': 'models/best_models/arch3', 'epochs': 27, 'iters': 2500, 'n_episodes': 5, 'Trainer': {'update_target_freq': 100, 'batch_size': 64, 'lr': 0.00181844, 'lr_gamma': 0.9, 'lr_step_size': 5, 'gamma': 0.95, 'eps_max': 1.0, 'eps_min': 0.1, 'eps_freq': 1000, 'eps_decrement': 0.01}}
+2020-07-28 15:39:13,407 - __main__ - INFO - Device: cuda
+2020-07-28 15:39:13,445 - __main__ - INFO - loaded model
+2020-07-28 15:39:13,976 - __main__ - INFO - loaded memory and learning iters count
+2020-07-28 15:39:13,977 - __main__ - INFO - EPOCH 0
+2020-07-28 15:58:59,687 - __main__ - INFO - saved model state_dict at models/agent10/v1
+2020-07-28 15:58:59,803 - __main__ - INFO - saved memory and learning iters count at models/agent10/memory
+2020-07-28 15:58:59,804 - __main__ - INFO - EPOCH 1
+2020-07-28 16:20:28,654 - __main__ - INFO - saved model state_dict at models/agent10/v1
+2020-07-28 16:20:28,738 - __main__ - INFO - saved memory and learning iters count at models/agent10/memory
+2020-07-28 16:20:28,739 - __main__ - INFO - EPOCH 2
+2020-07-28 16:40:54,764 - __main__ - INFO - saved model state_dict at models/agent10/v1
+2020-07-28 16:40:54,854 - __main__ - INFO - saved memory and learning iters count at models/agent10/memory
+2020-07-28 16:40:54,856 - __main__ - INFO - EPOCH 3
+2020-07-28 17:00:42,999 - __main__ - INFO - saved model state_dict at models/agent10/v1
+2020-07-28 17:00:43,106 - __main__ - INFO - saved memory and learning iters count at models/agent10/memory
+2020-07-28 17:00:43,107 - __main__ - INFO - EPOCH 4
+2020-07-28 17:20:27,761 - __main__ - INFO - saved model state_dict at models/agent10/v1
+2020-07-28 17:20:27,850 - __main__ - INFO - saved memory and learning iters count at models/agent10/memory
+2020-07-28 17:20:27,851 - __main__ - INFO - EPOCH 5
+2020-07-28 17:42:26,511 - __main__ - INFO - saved model state_dict at models/agent10/v1
+2020-07-28 17:42:26,604 - __main__ - INFO - saved memory and learning iters count at models/agent10/memory
+2020-07-28 17:42:26,606 - __main__ - INFO - EPOCH 6
+2020-07-28 18:03:40,708 - __main__ - INFO - saved model state_dict at models/agent10/v1
+2020-07-28 18:03:40,831 - __main__ - INFO - saved memory and learning iters count at models/agent10/memory
+2020-07-28 18:03:40,832 - __main__ - INFO - EPOCH 7
+2020-07-28 18:24:31,283 - __main__ - INFO - saved model state_dict at models/agent10/v1
+2020-07-28 18:24:31,389 - __main__ - INFO - saved memory and learning iters count at models/agent10/memory
+2020-07-28 18:24:31,389 - __main__ - INFO - EPOCH 8
+2020-07-28 18:45:39,088 - __main__ - INFO - saved model state_dict at models/agent10/v1
+2020-07-28 18:45:39,186 - __main__ - INFO - saved memory and learning iters count at models/agent10/memory
+2020-07-28 18:45:39,187 - __main__ - INFO - EPOCH 9
+2020-07-28 19:09:50,596 - __main__ - INFO - saved model state_dict at models/agent10/v1
+2020-07-28 19:09:51,096 - __main__ - INFO - saved memory and learning iters count at models/agent10/memory
+2020-07-28 19:09:51,100 - __main__ - INFO - EPOCH 10
+2020-07-28 19:33:53,044 - __main__ - INFO - saved model state_dict at models/agent10/v1
+2020-07-28 19:33:53,142 - __main__ - INFO - saved memory and learning iters count at models/agent10/memory
+2020-07-28 19:33:53,143 - __main__ - INFO - EPOCH 11
+2020-07-28 19:56:20,712 - __main__ - INFO - saved model state_dict at models/agent10/v1
+2020-07-28 19:56:20,807 - __main__ - INFO - saved memory and learning iters count at models/agent10/memory
+2020-07-28 19:56:20,809 - __main__ - INFO - EPOCH 12
+2020-07-28 20:18:39,910 - __main__ - INFO - saved model state_dict at models/agent10/v1
+2020-07-28 20:18:40,040 - __main__ - INFO - saved memory and learning iters count at models/agent10/memory
+2020-07-28 20:18:40,041 - __main__ - INFO - EPOCH 13
+2020-07-28 20:41:43,593 - __main__ - INFO - saved model state_dict at models/agent10/v1
+2020-07-28 20:41:43,699 - __main__ - INFO - saved memory and learning iters count at models/agent10/memory
+2020-07-28 20:41:43,700 - __main__ - INFO - EPOCH 14
+2020-07-28 21:04:10,978 - __main__ - INFO - saved model state_dict at models/agent10/v1
+2020-07-28 21:04:11,075 - __main__ - INFO - saved memory and learning iters count at models/agent10/memory
+2020-07-28 21:04:11,076 - __main__ - INFO - EPOCH 15
+2020-07-28 21:26:11,247 - __main__ - INFO - saved model state_dict at models/agent10/v1
+2020-07-28 21:26:11,367 - __main__ - INFO - saved memory and learning iters count at models/agent10/memory
+2020-07-28 21:26:11,368 - __main__ - INFO - EPOCH 16
+2020-07-28 21:48:17,739 - __main__ - INFO - saved model state_dict at models/agent10/v1
+2020-07-28 21:48:17,861 - __main__ - INFO - saved memory and learning iters count at models/agent10/memory
+2020-07-28 21:48:17,863 - __main__ - INFO - EPOCH 17
+2020-07-28 22:07:53,350 - __main__ - INFO - saved model state_dict at models/agent10/v1
+2020-07-28 22:07:53,452 - __main__ - INFO - saved memory and learning iters count at models/agent10/memory
+2020-07-28 22:07:53,453 - __main__ - INFO - EPOCH 18
+2020-07-28 22:27:02,048 - __main__ - INFO - saved model state_dict at models/agent10/v1
+2020-07-28 22:27:02,168 - __main__ - INFO - saved memory and learning iters count at models/agent10/memory
+2020-07-28 22:27:02,172 - __main__ - INFO - EPOCH 19
+2020-07-28 22:47:02,443 - __main__ - INFO - saved model state_dict at models/agent10/v1
+2020-07-28 22:47:02,544 - __main__ - INFO - saved memory and learning iters count at models/agent10/memory
+2020-07-28 22:47:02,546 - __main__ - INFO - EPOCH 20
+2020-07-28 23:08:36,338 - __main__ - INFO - saved model state_dict at models/agent10/v1
+2020-07-28 23:08:36,434 - __main__ - INFO - saved memory and learning iters count at models/agent10/memory
+2020-07-28 23:08:36,436 - __main__ - INFO - EPOCH 21
+2020-07-28 23:29:57,462 - __main__ - INFO - saved model state_dict at models/agent10/v1
+2020-07-28 23:29:57,584 - __main__ - INFO - saved memory and learning iters count at models/agent10/memory
+2020-07-28 23:29:57,586 - __main__ - INFO - EPOCH 22
+2020-07-28 23:51:34,805 - __main__ - INFO - saved model state_dict at models/agent10/v1
+2020-07-28 23:51:34,919 - __main__ - INFO - saved memory and learning iters count at models/agent10/memory
+2020-07-28 23:51:34,921 - __main__ - INFO - EPOCH 23
+2020-07-29 00:13:39,828 - __main__ - INFO - saved model state_dict at models/agent10/v1
+2020-07-29 00:13:39,934 - __main__ - INFO - saved memory and learning iters count at models/agent10/memory
+2020-07-29 00:13:39,935 - __main__ - INFO - EPOCH 24
+2020-07-29 00:33:56,810 - __main__ - INFO - saved model state_dict at models/agent10/v1
+2020-07-29 00:33:56,944 - __main__ - INFO - saved memory and learning iters count at models/agent10/memory
+2020-07-29 00:33:56,945 - __main__ - INFO - EPOCH 25
+2020-07-29 00:54:18,763 - __main__ - INFO - saved model state_dict at models/agent10/v1
+2020-07-29 00:54:18,860 - __main__ - INFO - saved memory and learning iters count at models/agent10/memory
+2020-07-29 00:54:18,862 - __main__ - INFO - EPOCH 26
+2020-07-29 01:15:20,195 - __main__ - INFO - saved model state_dict at models/agent10/v1
+2020-07-29 01:15:20,290 - __main__ - INFO - saved memory and learning iters count at models/agent10/memory
+2020-07-29 01:15:20,292 - __main__ - INFO - Total agent learning iters: 187500
+2020-07-29 01:15:20,292 - __main__ - INFO - DONE
