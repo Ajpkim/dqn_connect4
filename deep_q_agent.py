@@ -14,8 +14,8 @@ from logger import *
 from mdp import Connect4MDP
 from replay_buffer import ReplayBuffer
 
-# log_file='testing_logs/AE.log'
-# logger = get_logger(__name__, log_file=log_file, level=10)
+log_file='testing_logs/AE.log'
+logger = get_logger(__name__, log_file=log_file, level=10)
 
 class DeepQAgent(Agent):
     """
@@ -63,8 +63,8 @@ class DeepQAgent(Agent):
         with torch.no_grad():
             action_estimates = self.policy_net(tensor_state).squeeze()
 
-        # logger.info(f'state \n\n {state}')
-        # logger.info(f'action_estimates: {action_estimates}')
+        logger.info(f'state \n\n {state}')
+        logger.info(f'action_estimates: {action_estimates}')
     
         return action_estimates
 

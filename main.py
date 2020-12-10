@@ -21,43 +21,30 @@ from self_play_episodes import self_play_episodes
 from trainer import Trainer
 from util_players import RandomPlayer, HumanPlayer
 
-# add lr scheduler after some learning is evident
+# AlphaGoZero in 1 diagram
+# https://medium.com/applied-data-science/alphago-zero-explained-in-one-diagram-365f5abf67e0
 
 
-## Try CNN and use 2d board state as input
-# so One Hot the board for p1, p2 posistion. Only need 2dim since 2 blanks == empty space. 
-# Q: would it help network learn if i redundantly give it 3 channels?
-# One Hotting seems necessary regardless of cnn or not now
-## seems best to handle input processing within the specific architectures and just pass board state around
-# can handle board encoding as initial step in the forward pass and then just always give agent board state. Simpler.
-    # just change self play epsiodes and a couple thigns in agent methods
+# DQN https://jaromiru.com/
+
+# Moving on from DQN. 
 
 
+# icnrease negative reward for losing early?
 
 # Should I do something more systematic wrt epochs and data generation (self play) as 
 # in train through all data in replay buffer before filling it again for next epoch etc. 
 # and use torch dataloaders?
 
-
 ## exploit symmetry by adding double entries for each experience of a flipped board? 
 # Will this make it easier to learn symmetry?
-
-
-# should store data on losses and eval performance with agent info as in memory and learning iter count
-
 
 ### Is it hard to learn connect4 with current archetecture bc relationship btwn states and rewards is NOT SMOOTH???
 ## Can I make learning tractable with some search help???
 # --> network arch gets more complicated if I want to enable MCTS as well, multiple network heads computing
 # prob of action being highest value as well as likelihood of next move being winning move if replicate alphazero
 
-
 ## Write min max agent to test against.
-
-
-### AGENT ONLY LEARNS TO CONSECUTIVELY PLAY IN THE SAME COL... 
-
-## Should I add param for trying out different net architectures in agent class?
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--config_file", default='config/default.yaml', help='Configuration file location.')
